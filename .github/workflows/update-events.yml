@@ -1,37 +1,31 @@
 # .github/workflows/update-events.yml
-name: Update Le Havre Events
+name: Update Le havre events 
 
 on:
-  # Run every Sunday at 6:00 AM UTC (8:00 AM Paris time)
-  schedule:
-    - cron: '0 6 * * 0'
-  
-  # Allow manual triggering
+  # Manual trigger (keeps the "Run workflow" button)
   workflow_dispatch:
-  
-  # Run on push to main for testing
-  push:
-    branches: [ main ]
-    paths: 
-      - 'scraper.py'
-      - '.github/workflows/update-events.yml'
+  # Scheduled trigger (optional)
+  schedule:
+    - cron: '0 0 * * *'  # Runs at midnight UTC
 
 jobs:
   update-events:
     runs-on: ubuntu-latest
     
+    # 👇 Essential permissions (for pushing changes)
+    permissions:
+      contents: write
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        # Use a personal access token to allow pushing back to repo
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
-    
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
     - name: Install system dependencies
       run: |
         sudo apt-get update
