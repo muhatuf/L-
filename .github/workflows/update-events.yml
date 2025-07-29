@@ -2,13 +2,21 @@
 name: Update Le Havre Events
 
 on:
-  # Manual trigger (keeps the "Run workflow" button)
-  workflow_dispatch:
-  # Scheduled trigger (optional)
+  # Run every Sunday at 6:00 AM UTC (8:00 AM Paris time)
   schedule:
-    - cron: '0 0 * * *'  # Runs at midnight UTC
+    - cron: '0 6 * * 0'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+  
+  # Run on push to main for testing
+  push:
+    branches: [ main ]
+    paths: 
+      - 'scraper.py'
+      - '.github/workflows/update-events.yml'
 
- jobs:
+jobs:
   update-events:
     runs-on: ubuntu-latest
     
