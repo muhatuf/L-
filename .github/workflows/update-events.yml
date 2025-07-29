@@ -210,40 +210,42 @@ jobs:
         git push
     
     - name: Create summary
-      run: |
-        echo "## 🎭 Event Update Summary" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "**Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
+  run: |
+    echo "## 🎭 Event Update Summary" >> $GITHUB_STEP_SUMMARY
+    echo "" >> $GITHUB_STEP_SUMMARY
+    echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+    echo "**Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+    echo "" >> $GITHUB_STEP_SUMMARY
+    
+    EVENT_COUNT=$(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))" 2>/dev/null || echo "0")
+    echo "**Total Events:** ${EVENT_COUNT}" >> $GITHUB_STEP_SUMMARY
+    echo "" >> $GITHUB_STEP_SUMMARY
+    
+    if [ "${{ steps.check_changes.outputs.changes_detected }}" == "true" ]; then
+      echo "**Changes:** 🔄 Events updated" >> $GITHUB_STEP_SUMMARY
+    else
+      echo "**Changes:** ✨ No changes detected" >> $GITHUB_STEP_SUMMARY
+    fi
+    echo "" >> $GITHUB_STEP_SUMMARY
+    
+    echo "### Recent Events" >> $GITHUB_STEP_SUMMARY
+    python -c "
+    import json
+    from datetime import datetime
+    
+    try:
+        with open('lehavre_events_test.json', 'r') as f:
+            events = json.load(f)
         
-        EVENT_COUNT=$(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))" 2>/dev/null || echo "0")
-        echo "**Total Events:** ${EVENT_COUNT}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
+        print('| Title | Date | Location |')
+        print('|-------|------|----------|')
         
-        if [ "${{ steps.check_changes.outputs.changes_detected }}" == "true" ]; then
-          echo "**Changes:** 🔄 Events updated" >> $GITHUB_STEP_SUMMARY
-        else
-          echo "**Changes:** ✨ No changes detected" >> $GITHUB_STEP_SUMMARY
-        fi
-        echo "" >> $GITHUB_STEP_SUMMARY
-        
-        echo "### Recent Events" >> $GITHUB_STEP_SUMMARY
-        python -c "
-        import json
-        from datetime import datetime
-        
-        try:
-            with open('lehavre_events_test.json', 'r') as f:
-                events = json.load(f)
+        for event in events[:5]:  # Show first 5 events
+            title = event.get('title', 'N/A')[:40]
+            date = event.get('date', 'N/A')
+            location = event.get('full_address', 'N/A')[:30]
+            print(f'| {title} | {date} | {location} |')
             
-            print('| Title | Date | Location |')
-            print('|-------|------|----------|')
-            
-            for event in events[:5]:  # Show first 5 events
-                title = event.get('title', 'N/A')[:40]
-                date = event.get('date', 'N/A')
-                location = event.get('full_address', 'N/A')[:30]
-                print(f'| {title} | {date} | {location} |')
-                
-        except Exception as e
+    except Exception as e:
+        print('| Error loading events | - | - |')
+    "
