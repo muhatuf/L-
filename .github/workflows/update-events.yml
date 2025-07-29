@@ -20,17 +20,20 @@ jobs:
   update-events:
     runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        # Use a personal access token to allow pushing back to repo
-        token: ${{ secrets.GITHUB_TOKEN }}
+
+    permissions:
+      contents: write  # Allows pushing changes
     
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Keep this line
+    
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
     
     - name: Install system dependencies
       run: |
