@@ -8,24 +8,21 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Runs at midnight UTC
 
-jobs:
+ jobs:
   update-events:
     runs-on: ubuntu-latest
     
-    # 👇 Essential permissions (for pushing changes)
-    permissions:
-      contents: write
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        # Use a personal access token to allow pushing back to repo
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
     - name: Install system dependencies
       run: |
         sudo apt-get update
