@@ -117,7 +117,7 @@ class LeHavreEventsScraper:
 
             # Extract basic info from each event card
             events = []
-            for i, link in enumerate(event_links[:50]):  # Process up to 50 events
+            for i, link in enumerate(event_links[:10]):  # Process up to 50 events
                 try:
                     href = link.get_attribute('href')
                     if not href or '/fiche/' not in href:
@@ -406,7 +406,7 @@ class LeHavreEventsScraper:
         logger.info(f"Added {new_count} new events")
         return merged_events
 
-    def scrape_events(self, max_events=50):
+    def scrape_events(self, max_events=10):
         """Main method to scrape complete event data"""
         logger.info("Starting automated event scraping...")
 
@@ -515,7 +515,7 @@ def main():
     scraper = LeHavreEventsScraper(headless=True, timeout=20)
     
     try:
-        events = scraper.scrape_events(max_events=50)
+        events = scraper.scrape_events(max_events=10)
         
         if events:
             # Save events
