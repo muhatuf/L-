@@ -35,7 +35,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y wget unzip xvfb
+        sudo apt-get install -y wget unzip xvfb jq
         
         # Install Chrome
         wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -43,12 +43,67 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         
-        # Install ChromeDriver
-        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
-        CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}")
-        wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com//${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
-        sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+        # Install ChromeDriver using the new method
+        CHROME_VERSION=$(google-chrome --version | cut -d " " -f3)
+        echo "Chrome version: $CHROME_VERSION"
+        
+        # Get the major version
+        CHROME_MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
+        echo "Chrome major version: $CHROME_MAJOR_VERSION"
+        
+        # Use a robust method to get ChromeDriver
+        if [ "$CHROME_MAJOR_VERSION" -ge 115 ]; then
+          echo "Using Chrome for Testing API for Chrome $CHROME_MAJOR_VERSION+"
+          
+          # Try to get the exact version first
+          CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone-with-downloads.json" | \
+            jq -r ".milestones.\"$CHROME_MAJOR_VERSION\".downloads.chromedriver[]? | select(.platform==\"linux64\") | .url" | head -1)
+          
+          if [ -z "$CHROMEDRIVER_URL" ] || [ "$CHROMEDRIVER_URL" = "null" ]; then
+            echo "Exact version not found, using latest stable version..."
+            CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | \
+              jq -r ".channels.Stable.downloads.chromedriver[]? | select(.platform==\"linux64\") | .url" | head -1)
+          fi
+        else
+          echo "Using legacy ChromeDriver API for Chrome $CHROME_MAJOR_VERSION"
+          CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION}")
+          CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
+        fi
+        
+        if [ -z "$CHROMEDRIVER_URL" ] || [ "$CHROMEDRIVER_URL" = "null" ]; then
+          echo "All methods failed, using a known working version..."
+          CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.87/linux64/chromedriver-linux64.zip"
+        fi
+        
+        echo "Downloading ChromeDriver from: $CHROMEDRIVER_URL"
+        wget -O /tmp/chromedriver.zip "$CHROMEDRIVER_URL"
+        
+        # Extract and install
+        cd /tmp
+        unzip -q chromedriver.zip
+        
+        # Handle different archive structures
+        if [ -f "chromedriver-linux64/chromedriver" ]; then
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+        elif [ -f "chromedriver" ]; then
+          sudo mv chromedriver /usr/local/bin/
+        else
+          echo "Searching for chromedriver binary..."
+          find . -name "chromedriver" -type f
+          CHROMEDRIVER_PATH=$(find . -name "chromedriver" -type f | head -1)
+          if [ -n "$CHROMEDRIVER_PATH" ]; then
+            sudo mv "$CHROMEDRIVER_PATH" /usr/local/bin/
+          else
+            echo "ChromeDriver binary not found!"
+            exit 1
+          fi
+        fi
+        
         sudo chmod +x /usr/local/bin/chromedriver
+        
+        # Verify installation
+        echo "ChromeDriver installed successfully:"
+        /usr/local/bin/chromedriver --version
     
     - name: Install Python dependencies
       run: |
@@ -101,6 +156,18 @@ jobs:
             print('✅ Validation passed')
             
         except Exception as e:
+            print('| Error loading events | - | - |')
+        " >> $GITHUB_STEP_SUMMARY
+    
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "## ❌ Event Update Failed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ❌ Failed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Please check the workflow logs for details." >> $GITHUB_STEP_SUMMARY:
             print(f'❌ JSON validation failed: {e}')
             sys.exit(1)
         "
