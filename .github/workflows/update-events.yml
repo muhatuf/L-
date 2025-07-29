@@ -2,14 +2,9 @@
 name: Update Le Havre Events
 
 on:
-  # Run every Sunday at 6:00 AM UTC (8:00 AM Paris time)
   schedule:
     - cron: '0 6 * * 0'
-  
-  # Allow manual triggering
   workflow_dispatch:
-  
-  # Run on push to main for testing
   push:
     branches: [ main ]
     paths: 
@@ -19,13 +14,16 @@ on:
 jobs:
   update-events:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # ← This fixes the push permission
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        # Use a personal access token to allow pushing back to repo
         token: ${{ secrets.GITHUB_TOKEN }}
+    
+    # ... [keep all your existing steps, but use the fixed validation step above] ...
     
     - name: Set up Python
       uses: actions/setup-python@v4
