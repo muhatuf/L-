@@ -180,15 +180,14 @@ jobs:
           echo "Changes detected in events file"
         fi
     
-     - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git pull --rebase origin master  # ← THIS IS THE CRITICAL ADDITION
-        git add lehavre_events_test.json
-        git add lehavre_events_test_with_metadata.json
-        git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-        git push origin master
+ - name: Commit and push changes  
+  run: |  
+    git config --local user.email "action@github.com"  
+    git config --local user.name "GitHub Action"  
+    git add lehavre_events_test.json  
+    git add lehavre_events_test_with_metadata.json  
+    git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"  
+    git pull --rebase origin master || git push --force-with-lease origin master  
 
 📊 Summary:
 - Total events: ${EVENT_COUNT}
