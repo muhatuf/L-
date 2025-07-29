@@ -1,4 +1,3 @@
-# .github/workflows/update-events.yml
 name: Update Le Havre Events
 
 on:
@@ -15,20 +14,20 @@ jobs:
   update-events:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # ← This fixes the push permission
+      contents: write
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
+        fetch-depth: 0  # Important for git operations
         token: ${{ secrets.GITHUB_TOKEN }}
-    
-    # ... [keep all your existing steps, but use the fixed validation step above] ...
     
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
+    
     - name: Install system dependencies
       run: |
         sudo apt-get update
@@ -40,67 +39,27 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         
-        # Install ChromeDriver using the new method
+        # Install ChromeDriver
         CHROME_VERSION=$(google-chrome --version | cut -d " " -f3)
-        echo "Chrome version: $CHROME_VERSION"
-        
-        # Get the major version
         CHROME_MAJOR_VERSION=$(echo $CHROME_VERSION | cut -d. -f1)
-        echo "Chrome major version: $CHROME_MAJOR_VERSION"
         
-        # Use a robust method to get ChromeDriver
         if [ "$CHROME_MAJOR_VERSION" -ge 115 ]; then
-          echo "Using Chrome for Testing API for Chrome $CHROME_MAJOR_VERSION+"
-          
-          # Try to get the exact version first
           CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/latest-versions-per-milestone-with-downloads.json" | \
             jq -r ".milestones.\"$CHROME_MAJOR_VERSION\".downloads.chromedriver[]? | select(.platform==\"linux64\") | .url" | head -1)
           
-          if [ -z "$CHROMEDRIVER_URL" ] || [ "$CHROMEDRIVER_URL" = "null" ]; then
-            echo "Exact version not found, using latest stable version..."
+          if [ -z "$CHROMEDRIVER_URL" ]; then
             CHROMEDRIVER_URL=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | \
               jq -r ".channels.Stable.downloads.chromedriver[]? | select(.platform==\"linux64\") | .url" | head -1)
           fi
         else
-          echo "Using legacy ChromeDriver API for Chrome $CHROME_MAJOR_VERSION"
           CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_MAJOR_VERSION}")
           CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip"
         fi
         
-        if [ -z "$CHROMEDRIVER_URL" ] || [ "$CHROMEDRIVER_URL" = "null" ]; then
-          echo "All methods failed, using a known working version..."
-          CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.87/linux64/chromedriver-linux64.zip"
-        fi
-        
-        echo "Downloading ChromeDriver from: $CHROMEDRIVER_URL"
         wget -O /tmp/chromedriver.zip "$CHROMEDRIVER_URL"
-        
-        # Extract and install
-        cd /tmp
-        unzip -q chromedriver.zip
-        
-        # Handle different archive structures
-        if [ -f "chromedriver-linux64/chromedriver" ]; then
-          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-        elif [ -f "chromedriver" ]; then
-          sudo mv chromedriver /usr/local/bin/
-        else
-          echo "Searching for chromedriver binary..."
-          find . -name "chromedriver" -type f
-          CHROMEDRIVER_PATH=$(find . -name "chromedriver" -type f | head -1)
-          if [ -n "$CHROMEDRIVER_PATH" ]; then
-            sudo mv "$CHROMEDRIVER_PATH" /usr/local/bin/
-          else
-            echo "ChromeDriver binary not found!"
-            exit 1
-          fi
-        fi
-        
+        unzip -q /tmp/chromedriver.zip -d /tmp
+        sudo mv /tmp/chromedriver*/chromedriver /usr/local/bin/
         sudo chmod +x /usr/local/bin/chromedriver
-        
-        # Verify installation
-        echo "ChromeDriver installed successfully:"
-        /usr/local/bin/chromedriver --version
     
     - name: Install Python dependencies
       run: |
@@ -112,11 +71,8 @@ jobs:
         echo "Starting event scraping..."
         python scraper.py
         
-        echo "Scraping completed. Checking results..."
         if [ -f "lehavre_events_test.json" ]; then
           echo "JSON file created successfully"
-          echo "File size: $(wc -c < lehavre_events_test.json) bytes"
-          echo "Number of events: $(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))")"
         else
           echo "ERROR: JSON file was not created"
           exit 1
@@ -127,45 +83,16 @@ jobs:
     - name: Validate JSON file
       run: |
         python -c "
-        import json
-        import sys
-        from datetime import datetime
-        
+        import json, sys
         try:
-            with open('lehavre_events_test.json', 'r') as f:
+            with open('lehavre_events_test.json') as f:
                 events = json.load(f)
-            
-            print(f'✓ JSON is valid')
-            print(f'✓ Found {len(events)} events')
-            
-            # Basic validation
-            valid_events = 0
-            for event in events:
-                if event.get('title') and event.get('title') != 'Untitled Event':
-                    valid_events += 1
-            
-            print(f'✓ {valid_events} events have valid titles')
-            
-            if valid_events == 0:
-                print('❌ ERROR: No valid events found')
+            valid = sum(1 for e in events if e.get('title') and e.get('title') != 'Untitled Event')
+            print(f'Valid events: {valid}/{len(events)}')
+            if valid == 0:
                 sys.exit(1)
-            
-            print('✅ Validation passed')
-            
         except Exception as e:
-            print('| Error loading events | - | - |')
-        " >> $GITHUB_STEP_SUMMARY
-    
-    - name: Notify on failure
-      if: failure()
-      run: |
-        echo "## ❌ Event Update Failed" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-        echo "**Status:** ❌ Failed" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "Please check the workflow logs for details." >> $GITHUB_STEP_SUMMARY:
-            print(f'❌ JSON validation failed: {e}')
+            print(f'Validation failed: {str(e)}')
             sys.exit(1)
         "
     
@@ -174,82 +101,30 @@ jobs:
       run: |
         if git diff --quiet lehavre_events_test.json; then
           echo "changes_detected=false" >> $GITHUB_OUTPUT
-          echo "No changes detected in events file"
+          echo "No changes detected"
         else
           echo "changes_detected=true" >> $GITHUB_OUTPUT
-          echo "Changes detected in events file"
+          echo "Changes detected"
         fi
     
-   - name: Commit and push changes
+    - name: Commit and push changes
       if: steps.check_changes.outputs.changes_detected == 'true'
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        
-        # Add the updated JSON file
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
         git add lehavre_events_test.json
-        
-        # Also add metadata file if it exists
         if [ -f "lehavre_events_test_with_metadata.json" ]; then
           git add lehavre_events_test_with_metadata.json
         fi
-        
-        # Create commit message with summary
-        CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
-        EVENT_COUNT=$(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))")
-        
-        git commit -m "🎭 Auto-update events - ${CURRENT_DATE}
-
-📊 Summary:
-- Total events: ${EVENT_COUNT}
-- Updated: ${CURRENT_DATE}
-- Source: Le Havre Tourism Website
-
-🤖 This update was performed automatically by GitHub Actions" || echo "No changes to commit"
-
-    # Pull with rebase to avoid push rejection
-    git pull --rebase origin master
-
-    # Push changes
-    git push origin master
-
+        git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" || exit 0
+        git pull --rebase origin main
+        git push origin main
+    
     - name: Create summary
-  run: |
-    echo "## 🎭 Event Update Summary" >> $GITHUB_STEP_SUMMARY
-    echo "" >> $GITHUB_STEP_SUMMARY
-    echo "**Date:** $(date '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-    echo "**Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
-    echo "" >> $GITHUB_STEP_SUMMARY
-    
-    EVENT_COUNT=$(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))" 2>/dev/null || echo "0")
-    echo "**Total Events:** ${EVENT_COUNT}" >> $GITHUB_STEP_SUMMARY
-    echo "" >> $GITHUB_STEP_SUMMARY
-    
-    if [ "${{ steps.check_changes.outputs.changes_detected }}" == "true" ]; then
-      echo "**Changes:** 🔄 Events updated" >> $GITHUB_STEP_SUMMARY
-    else
-      echo "**Changes:** ✨ No changes detected" >> $GITHUB_STEP_SUMMARY
-    fi
-    echo "" >> $GITHUB_STEP_SUMMARY
-    
-    echo "### Recent Events" >> $GITHUB_STEP_SUMMARY
-    python -c "
-    import json
-    from datetime import datetime
-    
-    try:
-        with open('lehavre_events_test.json', 'r') as f:
-            events = json.load(f)
-        
-        print('| Title | Date | Location |')
-        print('|-------|------|----------|')
-        
-        for event in events[:5]:  # Show first 5 events
-            title = event.get('title', 'N/A')[:40]
-            date = event.get('date', 'N/A')
-            location = event.get('full_address', 'N/A')[:30]
-            print(f'| {title} | {date} | {location} |')
-            
-    except Exception as e:
-        print('| Error loading events | - | - |')
-    "
+      run: |
+        echo "## 🎭 Event Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** $([ "${{ steps.check_changes.outputs.changes_detected }}" = "true" ] && echo "✅ Updated" || echo "🔄 No changes")" >> $GITHUB_STEP_SUMMARY
+        if [ -f "lehavre_events_test.json" ]; then
+          echo "**Events Count:** $(python -c "import json; print(len(json.load(open('lehavre_events_test.json'))")" >> $GITHUB_STEP_SUMMARY
+        fi
