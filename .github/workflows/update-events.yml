@@ -180,25 +180,15 @@ jobs:
           echo "Changes detected in events file"
         fi
     
-    - name: Commit and push changes
-  if: steps.check_changes.outputs.changes_detected == 'true'
-  run: |
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-
-    # Add the updated JSON file
-    git add lehavre_events_test.json
-
-    # Also add metadata file if it exists
-    if [ -f "lehavre_events_test_with_metadata.json" ]; then
-      git add lehavre_events_test_with_metadata.json
-    fi
-
-    # Commit
-    CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
-    EVENT_COUNT=$(python -c "import json; data=json.load(open('lehavre_events_test.json')); print(len(data))")
-
-    git commit -m "🎭 Auto-update events - ${CURRENT_DATE}
+     - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull --rebase origin master  # ← THIS IS THE CRITICAL ADDITION
+        git add lehavre_events_test.json
+        git add lehavre_events_test_with_metadata.json
+        git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        git push origin master
 
 📊 Summary:
 - Total events: ${EVENT_COUNT}
