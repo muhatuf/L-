@@ -1,5 +1,5 @@
 # .github/workflows/update-events.yml
-name: Update Le havre events 
+name: Update Le Havre Events
 
 on:
   # Manual trigger (keeps the "Run workflow" button)
