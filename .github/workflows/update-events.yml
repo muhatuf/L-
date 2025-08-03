@@ -20,7 +20,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Important for git operations
+        fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
@@ -71,12 +71,13 @@ jobs:
         echo "Starting event scraping..."
         python scraper.py
         
-        if [ -f "lehavre_events_test.json" ]; then
-          echo "JSON file created successfully"
-        else
-          echo "ERROR: JSON file was not created"
+        # Verify the file was created
+        if [ ! -f "lehavre_events_test.json" ]; then
+          echo "ERROR: JSON file was not created by scraper.py"
+          ls -la  # Debug: Show files in directory
           exit 1
         fi
+        echo "File exists, continuing..."
       env:
         DISPLAY: :99
     
@@ -87,6 +88,7 @@ jobs:
         try:
             with open('lehavre_events_test.json') as f:
                 events = json.load(f)
+            print(f'Found {len(events)} events')
             valid = sum(1 for e in events if e.get('title') and e.get('title') != 'Untitled Event')
             print(f'Valid events: {valid}/{len(events)}')
             if valid == 0:
@@ -96,29 +98,46 @@ jobs:
             sys.exit(1)
         "
     
+    - name: Configure Git
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git remote -v
+        git branch -a
+    
     - name: Check for changes
       id: check_changes
       run: |
-        if git diff --quiet lehavre_events_test.json; then
+        git status
+        git diff --stat
+        if [ -n "$(git status --porcelain lehavre_events_test.json)" ]; then
+          echo "changes_detected=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in lehavre_events_test.json"
+        else
           echo "changes_detected=false" >> $GITHUB_OUTPUT
           echo "No changes detected"
-        else
-          echo "changes_detected=true" >> $GITHUB_OUTPUT
-          echo "Changes detected"
         fi
     
     - name: Commit and push changes
       if: steps.check_changes.outputs.changes_detected == 'true'
       run: |
-        git config --global user.email "action@github.com"
-        git config --global user.name "GitHub Action"
         git add lehavre_events_test.json
-        if [ -f "lehavre_events_test_with_metadata.json" ]; then
-          git add lehavre_events_test_with_metadata.json
-        fi
-        git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" || exit 0
+        git status
+        git commit -m "🎭 Auto-update events - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
         git pull --rebase origin main
         git push origin main
+        echo "Push completed with exit code $?"
+    
+    - name: Verify push
+      if: steps.check_changes.outputs.changes_detected == 'true'
+      run: |
+        git fetch origin main
+        if ! git diff --exit-code origin/main lehavre_events_test.json; then
+          echo "ERROR: File was not updated on remote!"
+          exit 1
+        else
+          echo "Successfully verified file update on remote"
+        fi
     
     - name: Create summary
       run: |
@@ -126,5 +145,5 @@ jobs:
         echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
         echo "**Status:** $([ "${{ steps.check_changes.outputs.changes_detected }}" = "true" ] && echo "✅ Updated" || echo "🔄 No changes")" >> $GITHUB_STEP_SUMMARY
         if [ -f "lehavre_events_test.json" ]; then
-          echo "**Events Count:** $(python -c "import json; print(len(json.load(open('lehavre_events_test.json'))")" >> $GITHUB_STEP_SUMMARY
+          echo "**Events Count:** $(python -c "import json; print(len(json.load(open('lehavre_events_test.json'))))")" >> $GITHUB_STEP_SUMMARY
         fi
