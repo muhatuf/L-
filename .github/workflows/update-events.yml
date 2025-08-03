@@ -5,7 +5,7 @@ on:
     - cron: '0 6 * * 0'
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths: 
       - 'scraper.py'
       - '.github/workflows/update-events.yml'
@@ -117,7 +117,14 @@ jobs:
           echo "changes_detected=false" >> $GITHUB_OUTPUT
           echo "No changes detected"
         fi
-    
+        
+        - name: Verify branch
+      run: |
+        echo "Current branch: $(git branch --show-current)"
+        if [ "$(git branch --show-current)" != "master" ]; then
+          echo "ERROR: Not on master branch!"
+          exit 1
+        fi
     - name: Commit and push changes
       if: steps.check_changes.outputs.changes_detected == 'true'
       run: |
