@@ -74,165 +74,166 @@ class LeHavreEventsScraper:
             logger.warning(f"Error checking event expiration: {e}")
             return False
 
-    def _get_event_cards_with_selenium(self):
-    """Use Selenium to get event cards from the main page with multiple attempts to load more events"""
-    if not self.driver:
-        self._setup_driver()
+        def _get_event_cards_with_selenium(self):
+        """Use Selenium to get event cards from the main page with multiple attempts to load more events"""
+        if not self.driver:
+            self._setup_driver()
 
-    try:
-        logger.info("Loading concerts page...")
-        self.driver.get(self.events_url)
+        try:
+            logger.info("Loading concerts page...")
+            self.driver.get(self.events_url)
 
-        # Wait for page to load completely
-        WebDriverWait(self.driver, self.timeout).until(
-            EC.presence_of_element_located((By.TAG_NAME, "body"))
-        )
+            # Wait for page to load completely
+            WebDriverWait(self.driver, self.timeout).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
 
-        # Try to load more events - multiple attempts with different selectors
-        max_attempts = 3
-        for attempt in range(max_attempts):
-            try:
-                # Try different variations of the "load more" button
-                button_selectors = [
-                    "//button[contains(., 'Plus de résultats')]",  # French version
-                    "//button[contains(., 'Voir plus')]",  # Alternative French
-                    "//button[contains(., 'Afficher plus')]",  # Another French variant
-                    "//button[contains(., 'View More')]",  # English version
-                    "//a[contains(., 'Plus de résultats')]",  # Sometimes it's an <a> tag
-                    "//div[contains(@class, 'load-more')]",  # Class-based approach
-                    "//*[contains(@class, 'btn-more')]"  # Another common class
-                ]
+            # Try to load more events - multiple attempts with different selectors
+            max_attempts = 3
+            for attempt in range(max_attempts):
+                try:
+                    # Try different variations of the "load more" button
+                    button_selectors = [
+                        "//button[contains(., 'Plus de résultats')]",  # French version
+                        "//button[contains(., 'Voir plus')]",  # Alternative French
+                        "//button[contains(., 'Afficher plus')]",  # Another French variant
+                        "//button[contains(., 'View More')]",  # English version
+                        "//a[contains(., 'Plus de résultats')]",  # Sometimes it's an <a> tag
+                        "//div[contains(@class, 'load-more')]",  # Class-based approach
+                        "//*[contains(@class, 'btn-more')]"  # Another common class
+                    ]
 
-                for selector in button_selectors:
-                    try:
-                        button = WebDriverWait(self.driver, 5).until(
-                            EC.element_to_be_clickable((By.XPATH, selector))
-                        )
-                        if button.is_displayed():
-                            # Scroll to the button smoothly
-                            self.driver.execute_script(
-                                "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", 
-                                button
+                    for selector in button_selectors:
+                        try:
+                            button = WebDriverWait(self.driver, 5).until(
+                                EC.element_to_be_clickable((By.XPATH, selector))
                             )
-                            time.sleep(1)  # Small pause for scrolling
-                            
-                            # Click using JavaScript to avoid interception
-                            self.driver.execute_script("arguments[0].click();", button)
-                            
-                            # Wait for new content to load
-                            time.sleep(3)  # Wait for AJAX to complete
-                            WebDriverWait(self.driver, 10).until(
-                                EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/fiche/']"))
-                            
-                            logger.info(f"Successfully clicked 'View More' button (attempt {attempt + 1})")
-                            break  # Successfully clicked one button
-                    except:
-                        continue
+                            if button.is_displayed():
+                                # Scroll to the button smoothly
+                                self.driver.execute_script(
+                                    "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",
+                                    button
+                                )
+                                time.sleep(1)  # Small pause for scrolling
 
-            except Exception as e:
-                logger.debug(f"Attempt {attempt + 1} failed to find/click 'View More' button: {str(e)}")
-                if attempt == max_attempts - 1:
-                    logger.info("No more attempts to find 'View More' button")
-                time.sleep(2)  # Wait before next attempt
+                                # Click using JavaScript to avoid interception
+                                self.driver.execute_script("arguments[0].click();", button)
 
-        # Original event card scraping logic
-        event_selectors = [
-            'a[href*="/fiche/"]',  # Links containing /fiche/ in URL
-            '.event-card a',
-            '.card a',
-            'article a',
-            '.item a'
-        ]
+                                # Wait for new content to load
+                                time.sleep(3)  # Wait for AJAX to complete
+                                WebDriverWait(self.driver, 10).until(
+                                    EC.presence_of_element_located((By.CSS_SELECTOR, "a[href*='/fiche/']")))
 
-        event_links = []
-        for selector in event_selectors:
-            try:
-                links = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                if links:
-                    logger.info(f"Found {len(links)} potential event links with selector: {selector}")
-                    event_links = links
-                    break
-            except Exception as e:
-                continue
+                                logger.info(f"Successfully clicked 'View More' button (attempt {attempt + 1})")
+                                break  # Successfully clicked one button
+                        except:
+                            continue
 
-        if not event_links:
-            # Fallback: get all links that might be events
-            all_links = self.driver.find_elements(By.TAG_NAME, "a")
-            event_links = [link for link in all_links
-                         if link.get_attribute('href') and '/fiche/' in link.get_attribute('href')]
-            logger.info(f"Fallback: Found {len(event_links)} links with /fiche/ pattern")
+                except Exception as e:
+                    logger.debug(f"Attempt {attempt + 1} failed to find/click 'View More' button: {str(e)}")
+                    if attempt == max_attempts - 1:
+                        logger.info("No more attempts to find 'View More' button")
+                    time.sleep(2)  # Wait before next attempt
 
-        # Extract basic info from each event card
-        events = []
-        for i, link in enumerate(event_links[:48]):  # Increased limit to 48
-            try:
-                href = link.get_attribute('href')
-                if not href or '/fiche/' not in href:
+            # Original event card scraping logic
+            event_selectors = [
+                'a[href*="/fiche/"]',  # Links containing /fiche/ in URL
+                '.event-card a',
+                '.card a',
+                'article a',
+                '.item a'
+            ]
+
+            event_links = []
+            for selector in event_selectors:
+                try:
+                    links = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                    if links:
+                        logger.info(f"Found {len(links)} potential event links with selector: {selector}")
+                        event_links = links
+                        break
+                except Exception as e:
                     continue
 
-                # Get the parent element that contains the event info
-                card_element = link
-                for _ in range(3):  # Go up to 3 levels to find the card container
-                    parent = card_element.find_element(By.XPATH, "..")
-                    if parent.tag_name in ['article', 'div'] and ('card' in parent.get_attribute('class') or ''):
+            if not event_links:
+                # Fallback: get all links that might be events
+                all_links = self.driver.find_elements(By.TAG_NAME, "a")
+                event_links = [link for link in all_links
+                               if link.get_attribute('href') and '/fiche/' in link.get_attribute('href')]
+                logger.info(f"Fallback: Found {len(event_links)} links with /fiche/ pattern")
+
+            # Extract basic info from each event card
+            events = []
+            for i, link in enumerate(event_links[:48]):  # Increased limit to 48
+                try:
+                    href = link.get_attribute('href')
+                    if not href or '/fiche/' not in href:
+                        continue
+
+                    # Get the parent element that contains the event info
+                    card_element = link
+                    for _ in range(3):  # Go up to 3 levels to find the card container
+                        parent = card_element.find_element(By.XPATH, "..")
+                        if parent.tag_name in ['article', 'div'] and ('card' in parent.get_attribute('class') or ''):
+                            card_element = parent
+                            break
                         card_element = parent
-                        break
-                    card_element = parent
 
-                # Extract basic information from the card
-                title = ""
-                try:
-                    title_elem = card_element.find_element(By.CSS_SELECTOR, "h1, h2, h3, h4, .title, .heading")
-                    title = title_elem.text.strip()
-                except:
-                    title = link.text.strip()
+                    # Extract basic information from the card
+                    title = ""
+                    try:
+                        title_elem = card_element.find_element(By.CSS_SELECTOR, "h1, h2, h3, h4, .title, .heading")
+                        title = title_elem.text.strip()
+                    except:
+                        title = link.text.strip()
 
-                # Extract image if available
-                image_url = ""
-                try:
-                    img_elem = card_element.find_element(By.TAG_NAME, "img")
-                    image_url = img_elem.get_attribute('src')
-                    if image_url and not image_url.startswith('http'):
-                        image_url = urljoin(self.base_url, image_url)
-                except:
-                    pass
+                    # Extract image if available
+                    image_url = ""
+                    try:
+                        img_elem = card_element.find_element(By.TAG_NAME, "img")
+                        image_url = img_elem.get_attribute('src')
+                        if image_url and not image_url.startswith('http'):
+                            image_url = urljoin(self.base_url, image_url)
+                    except:
+                        pass
 
-                # Extract ID from URL
-                event_id = ""
-                url_match = re.search(r'_([A-Z0-9]+)/?$', href)
-                if url_match:
-                    event_id = url_match.group(1)
+                    # Extract ID from URL
+                    event_id = ""
+                    url_match = re.search(r'_([A-Z0-9]+)/?$', href)
+                    if url_match:
+                        event_id = url_match.group(1)
 
-                event = {
-                    'id': event_id,
-                    'title': title,
-                    'detail_url': href,
-                    'image_url': image_url,
-                    'date': '',
-                    'time': '',
-                    'full_address': '',
-                    'price': '',
-                    'description': '',
-                    'ticket_url': '',
-                    'organizer': '',
-                    'audience': '',
-                    'scraped_at': datetime.now().isoformat()
-                }
+                    event = {
+                        'id': event_id,
+                        'title': title,
+                        'detail_url': href,
+                        'image_url': image_url,
+                        'date': '',
+                        'time': '',
+                        'full_address': '',
+                        'price': '',
+                        'description': '',
+                        'ticket_url': '',
+                        'organizer': '',
+                        'audience': '',
+                        'scraped_at': datetime.now().isoformat()
+                    }
 
-                if title:
-                    events.append(event)
-                    logger.info(f"Added event: {title}")
+                    if title:
+                        events.append(event)
+                        logger.info(f"Added event: {title}")
 
-            except Exception as e:
-                logger.warning(f"Failed to parse event card {i}: {e}")
-                continue
+                except Exception as e:
+                    logger.warning(f"Failed to parse event card {i}: {e}")
+                    continue
 
-        logger.info(f"Total events collected: {len(events)}")
-        return events
+            logger.info(f"Total events collected: {len(events)}")
+            return events
 
-    except Exception as e:
-        logger.error(f"Failed to get event cards: {e}")
-        return []
+        except Exception as e:
+            logger.error(f"Failed to get event cards: {e}")
+            return []
+
 
     def _get_popup_details(self, event_url):
         """Extract detailed information from event popup/detail page"""
