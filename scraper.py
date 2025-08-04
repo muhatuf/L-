@@ -1,4 +1,4 @@
-import requests
+ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -18,6 +18,7 @@ import sys
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+
 
 class LeHavreEventsScraper:
     def __init__(self, headless=True, timeout=15):
@@ -40,7 +41,7 @@ class LeHavreEventsScraper:
         chrome_options.add_argument("--disable-extensions")
         chrome_options.add_argument("--disable-plugins")
         chrome_options.add_argument("--disable-images")  # Speed up scraping
-        
+
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(self.timeout)
 
@@ -56,7 +57,7 @@ class LeHavreEventsScraper:
             date_str = event_data.get('date', '')
             if not date_str:
                 return False  # Keep events without dates
-                
+
             # Parse French date format DD/MM/YYYY
             if '/' in date_str:
                 parts = date_str.split('/')
@@ -65,16 +66,16 @@ class LeHavreEventsScraper:
                     month = int(parts[1])
                     year = int(parts[2])
                     event_date = datetime(year, month, day)
-                    
+
                     # Consider event expired if it's more than 1 day in the past
                     return event_date < (datetime.now() - timedelta(days=1))
-            
+
             return False
         except Exception as e:
             logger.warning(f"Error checking event expiration: {e}")
             return False
 
-        def _get_event_cards_with_selenium(self):
+    def _get_event_cards_with_selenium(self):
         """Use Selenium to get event cards from the main page with multiple attempts to load more events"""
         if not self.driver:
             self._setup_driver()
@@ -233,7 +234,6 @@ class LeHavreEventsScraper:
         except Exception as e:
             logger.error(f"Failed to get event cards: {e}")
             return []
-
 
     def _get_popup_details(self, event_url):
         """Extract detailed information from event popup/detail page"""
@@ -405,18 +405,18 @@ class LeHavreEventsScraper:
                 with open(filename, 'r', encoding='utf-8') as f:
                     existing_events = json.load(f)
                 logger.info(f"Loaded {len(existing_events)} existing events")
-                
+
                 # Filter out expired events
                 current_events = []
                 expired_count = 0
-                
+
                 for event in existing_events:
                     if self._is_event_expired(event):
                         expired_count += 1
                         logger.info(f"Removing expired event: {event.get('title', 'Unknown')}")
                     else:
                         current_events.append(event)
-                
+
                 logger.info(f"Removed {expired_count} expired events")
                 return current_events
             else:
@@ -430,14 +430,14 @@ class LeHavreEventsScraper:
         """Merge new events with existing ones, avoiding duplicates"""
         existing_ids = {event.get('id', '') for event in existing_events if event.get('id')}
         existing_titles = {event.get('title', '').lower() for event in existing_events}
-        
+
         merged_events = existing_events.copy()
         new_count = 0
-        
+
         for new_event in new_events:
             event_id = new_event.get('id', '')
             event_title = new_event.get('title', '').lower()
-            
+
             # Check for duplicates by ID or title
             if event_id and event_id in existing_ids:
                 logger.info(f"Skipping duplicate event (ID): {new_event.get('title', 'Unknown')}")
@@ -451,7 +451,7 @@ class LeHavreEventsScraper:
                 existing_titles.add(event_title)
                 new_count += 1
                 logger.info(f"Added new event: {new_event.get('title', 'Unknown')}")
-        
+
         logger.info(f"Added {new_count} new events")
         return merged_events
 
@@ -462,7 +462,7 @@ class LeHavreEventsScraper:
         try:
             # Load existing events
             existing_events = self.load_existing_events()
-            
+
             # Step 1: Get event cards from main page
             initial_events = self._get_event_cards_with_selenium()
             logger.info(f"Found {len(initial_events)} initial events")
@@ -504,7 +504,7 @@ class LeHavreEventsScraper:
 
             # Step 3: Merge with existing events
             all_events = self.merge_events(existing_events, complete_new_events)
-            
+
             # Sort events by date
             def get_event_date(event):
                 try:
@@ -516,7 +516,7 @@ class LeHavreEventsScraper:
                 except:
                     pass
                 return datetime.now() + timedelta(days=365)  # Put events without dates at the end
-            
+
             all_events.sort(key=get_event_date)
 
             logger.info(f"\n=== SCRAPING COMPLETE ===")
@@ -539,42 +539,43 @@ class LeHavreEventsScraper:
                 },
                 'events': events
             }
-            
+
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(events, f, ensure_ascii=False, indent=2)  # Keep original format for compatibility
-            
+
             logger.info(f"Events saved to {filename}")
-            
+
             # Also save with metadata for monitoring
             metadata_filename = filename.replace('.json', '_with_metadata.json')
             with open(metadata_filename, 'w', encoding='utf-8') as f:
                 json.dump(output_data, f, ensure_ascii=False, indent=2)
-            
+
             logger.info(f"Events with metadata saved to {metadata_filename}")
-            
+
         except Exception as e:
             logger.error(f"Failed to save events: {e}")
             raise
 
+
 def main():
     """Main function for automated execution"""
     print("=== LE HAVRE EVENTS SCRAPER (AUTOMATED) ===\n")
-    
+
     # Use headless mode for automation
     scraper = LeHavreEventsScraper(headless=True, timeout=20)
-    
+
     try:
         events = scraper.scrape_events(max_events=40)
-        
+
         if events:
             # Save events
             scraper.save_events_json(events)
-            
+
             # Print summary
             print(f"\n=== AUTOMATION SUMMARY ===")
             print(f"Total events: {len(events)}")
             print(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            
+
             # Print recent events for verification
             print(f"\n=== RECENT EVENTS (First 5) ===")
             for i, event in enumerate(events[:5], 1):
@@ -582,15 +583,16 @@ def main():
                 print(f"   Date: {event.get('date', 'N/A')}")
                 print(f"   Location: {event.get('full_address', 'N/A')[:50]}...")
                 print()
-            
+
             return True
         else:
             logger.error("No events were scraped")
             return False
-            
+
     except Exception as e:
         logger.error(f"Automation failed: {e}")
         return False
+
 
 if __name__ == "__main__":
     success = main()
