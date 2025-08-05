@@ -75,6 +75,71 @@ class LeHavreEventsScraper:
             logger.warning(f"Error checking event expiration: {e}")
             return False
 
+    def _is_valid_address(self, text):
+        """Check if text looks like a valid address"""
+        if not text or len(text) < 10:
+            return False
+
+        text_lower = text.lower()
+
+        # Must contain typical French address components
+        street_indicators = ['rue', 'avenue', 'boulevard', 'place', 'route', 'allée', 'impasse', 'chemin', 'square']
+        has_street = any(indicator in text_lower for indicator in street_indicators)
+
+        # Must contain a 5-digit postal code
+        has_postal = re.search(r'\b\d{5}\b', text)
+
+        # Should contain "Le Havre" or similar city names in the region
+        cities = ['le havre', 'havre', 'etretat', 'montivilliers', 'gonfreville', 'harfleur']
+        has_city = any(city in text_lower for city in cities)
+
+        # Check for common address patterns
+        has_number = re.search(r'\b\d+\b', text)  # Street number
+
+        return (has_street or has_postal) and (has_postal or has_city) and len(text) < 200
+
+    def _extract_address_from_text(self, text):
+        """Extract address from a larger text block"""
+        if not text:
+            return None
+
+        # Split by common separators and check each part
+        parts = re.split(r'[;\n\r]', text)
+
+        for part in parts:
+            part = part.strip()
+            if self._is_valid_address(part):
+                return part
+
+        # If no part is valid, try to extract using patterns
+        patterns = [
+            r'([A-Za-zÀ-ÿ\s\-\']+\s*-\s*\d+[^-\n]*-\s*\d{5}\s+[A-Za-zÀ-ÿ\s\-\']+)',
+            r'(\d+\s+[A-Za-zÀ-ÿ\s\-\']+,?\s*\d{5}\s+[A-Za-zÀ-ÿ\s\-\']+)',
+        ]
+
+        for pattern in patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                return self._clean_address(match.group(1))
+
+        return None
+
+    def _clean_address(self, address):
+        """Clean and format address string"""
+        if not address:
+            return ""
+
+        # Remove extra spaces and clean up
+        address = re.sub(r'\s+', ' ', address.strip())
+
+        # Remove common prefixes that might be included
+        prefixes_to_remove = ['lieu:', 'adresse:', 'address:', 'où:']
+        for prefix in prefixes_to_remove:
+            if address.lower().startswith(prefix):
+                address = address[len(prefix):].strip()
+
+        return address
+
     def _get_event_cards_with_selenium(self):
         """Use Selenium to get event cards from the main page with multiple attempts to load more events"""
         if not self.driver:
@@ -247,151 +312,282 @@ class LeHavreEventsScraper:
             )
 
             # Give extra time for any dynamic content
-            time.sleep(2)
+            time.sleep(3)
 
             details = {}
 
-            # Extract full address - focus on address under title in popup
+            # Enhanced address extraction with multiple strategies
             try:
+                # Strategy 1: Look for specific Le Havre tourism site patterns
                 address_found = False
 
-                # Strategy 1: Look for address right after the title/heading
+                # Check for venue name followed by address pattern (like "Chez Lili - 2 Rue des Etoupières - 76600 LE HAVRE")
                 try:
-                    # Find the main title first
-                    title_elements = self.driver.find_elements(By.CSS_SELECTOR, "h1, h2, .titre, .title")
-                    for title_elem in title_elements:
-                        # Look for address in the next sibling or nearby elements
-                        parent = title_elem.find_element(By.XPATH, "..")
-                        following_elements = parent.find_elements(By.XPATH, ".//*")
+                    # Look for elements containing venue and address information
+                    all_elements = self.driver.find_elements(By.XPATH,
+                                                             "//*[contains(text(), 'Rue') or contains(text(), 'Avenue') or contains(text(), 'Boulevard') or contains(text(), 'Place') or contains(text(), 'Route')]")
 
-                        for elem in following_elements:
-                            text = elem.text.strip()
-                            # Check if it looks like an address (contains street info and postal code)
-                            if (len(text) > 10 and
-                                    ('rue' in text.lower() or 'avenue' in text.lower() or 'place' in text.lower() or
-                                     'boulevard' in text.lower() or 'chemin' in text.lower()) and
-                                    re.search(r'\d{5}', text)):  # Contains 5-digit postal code
-                                details['full_address'] = text
-                                logger.info(f"Found address near title: {text}")
-                                address_found = True
-                                break
-                        if address_found:
+                    for elem in all_elements:
+                        text = elem.text.strip()
+                        # Look for pattern: Venue Name - Street Address - Postal Code City
+                        if (len(text) > 15 and
+                                (' - ' in text or '–' in text) and
+                                re.search(r'\d{5}', text) and
+                                any(street in text.lower() for street in
+                                    ['rue', 'avenue', 'boulevard', 'place', 'route', 'quai', 'impasse'])):
+                            details['full_address'] = text
+                            logger.info(f"Found address pattern 1: {text}")
+                            address_found = True
                             break
                 except Exception as e:
-                    logger.debug(f"Strategy 1 failed: {e}")
+                    logger.debug(f"Address pattern 1 failed: {e}")
 
-                # Additional strategies (2-4) from original code...
-                # [Previous address extraction strategies here - keeping them for robustness]
+                # Strategy 2: Look for structured address information
+                if not address_found:
+                    try:
+                        # Look for address in structured format
+                        address_selectors = [
+                            '.fiche-adresse',
+                            '.adresse',
+                            '.lieu',
+                            '.location',
+                            '.venue-address',
+                            '[class*="adresse"]',
+                            '[class*="lieu"]',
+                            '[class*="location"]'
+                        ]
+
+                        for selector in address_selectors:
+                            try:
+                                elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                                for elem in elements:
+                                    text = elem.text.strip()
+                                    if (len(text) > 10 and
+                                            re.search(r'\d{5}', text) and
+                                            any(street in text.lower() for street in
+                                                ['rue', 'avenue', 'boulevard', 'place', 'route'])):
+                                        details['full_address'] = text
+                                        logger.info(f"Found address with selector {selector}: {text}")
+                                        address_found = True
+                                        break
+                                if address_found:
+                                    break
+                            except:
+                                continue
+                    except Exception as e:
+                        logger.debug(f"Structured address search failed: {e}")
+
+                # Strategy 3: Look for address near title or in main content area
+                if not address_found:
+                    try:
+                        # Find the main content area
+                        main_content_selectors = [
+                            '.fiche-content',
+                            '.event-details',
+                            '.main-content',
+                            '.content',
+                            'main',
+                            '[role="main"]'
+                        ]
+
+                        for selector in main_content_selectors:
+                            try:
+                                content_area = self.driver.find_element(By.CSS_SELECTOR, selector)
+                                # Look for all text elements within this area
+                                text_elements = content_area.find_elements(By.XPATH, ".//*[text()]")
+
+                                for elem in text_elements:
+                                    text = elem.text.strip()
+                                    # Enhanced pattern matching for French addresses
+                                    if (len(text) > 15 and
+                                            re.search(r'(\d+\s+[a-zA-Zéèêëàâäôöûüç\s-]+(?:\s*-\s*\d{5}\s+[A-Z\s]+)?)',
+                                                      text) and
+                                            any(street in text.lower() for street in
+                                                ['rue', 'avenue', 'boulevard', 'place', 'route', 'quai'])):
+                                        details['full_address'] = text
+                                        logger.info(f"Found address in content area: {text}")
+                                        address_found = True
+                                        break
+                                if address_found:
+                                    break
+                            except:
+                                continue
+                    except Exception as e:
+                        logger.debug(f"Content area address search failed: {e}")
+
+                # Strategy 4: Enhanced regex pattern matching on entire page
+                if not address_found:
+                    try:
+                        page_source = self.driver.page_source
+
+                        # Multiple regex patterns for different address formats
+                        patterns = [
+                            # Pattern: "Venue Name - Street Number Street Name - Postal Code City"
+                            r'([A-Za-zéèêëàâäôöûüç\s&\'-]+)\s*[-–]\s*(\d+\s+[Rr]ue\s+[a-zA-Zéèêëàâäôöûüç\s\'-]+)\s*[-–]\s*(\d{5}\s+[A-Z\s]+)',
+                            # Pattern: "Street Number Street Name, Postal Code City"
+                            r'(\d+\s+[Rr]ue\s+[a-zA-Zéèêëàâäôöûüç\s\'-]+,?\s*\d{5}\s+[A-Z\s]+)',
+                            # Pattern for other street types
+                            r'(\d+\s+(?:Avenue|Boulevard|Place|Route|Quai|Impasse)\s+[a-zA-Zéèêëàâäôöûüç\s\'-]+,?\s*\d{5}\s+[A-Z\s]+)',
+                            # Generic pattern with venue name
+                            r'([A-Za-zéèêëàâäôöûüç\s&\'-]+\s*[-–]\s*\d+\s+[a-zA-Zéèêëàâäôöûüç\s\'-]+\s*[-–]\s*\d{5}\s+[A-Z\s]+)'
+                        ]
+
+                        for pattern in patterns:
+                            matches = re.finditer(pattern, page_source, re.IGNORECASE)
+                            for match in matches:
+                                address_text = match.group(0).strip()
+                                # Clean up HTML entities and extra whitespace
+                                address_text = re.sub(r'&[a-zA-Z]+;', ' ', address_text)
+                                address_text = re.sub(r'\s+', ' ', address_text)
+
+                                if len(address_text) > 15:
+                                    details['full_address'] = address_text
+                                    logger.info(f"Found address via regex pattern: {address_text}")
+                                    address_found = True
+                                    break
+                            if address_found:
+                                break
+                    except Exception as e:
+                        logger.debug(f"Regex pattern matching failed: {e}")
+
+                # Strategy 5: Look for microdata or structured data
+                if not address_found:
+                    try:
+                        # Check for schema.org microdata
+                        microdata_selectors = [
+                            '[itemprop="address"]',
+                            '[itemprop="streetAddress"]',
+                            '[itemtype*="PostalAddress"]',
+                            '.microdata-address'
+                        ]
+
+                        for selector in microdata_selectors:
+                            try:
+                                elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                                for elem in elements:
+                                    text = elem.text.strip()
+                                    if len(text) > 10:
+                                        details['full_address'] = text
+                                        logger.info(f"Found microdata address: {text}")
+                                        address_found = True
+                                        break
+                                if address_found:
+                                    break
+                            except:
+                                continue
+                    except Exception as e:
+                        logger.debug(f"Microdata search failed: {e}")
+
+                # Strategy 6: Fallback - look for any text containing postal code and street indicators
+                if not address_found:
+                    try:
+                        all_text = self.driver.find_element(By.TAG_NAME, "body").text
+                        lines = all_text.split('\n')
+
+                        for line in lines:
+                            line = line.strip()
+                            if (len(line) > 15 and
+                                    re.search(r'\d{5}', line) and
+                                    any(street in line.lower() for street in
+                                        ['rue', 'avenue', 'boulevard', 'place', 'route']) and
+                                    not any(skip in line.lower() for skip in
+                                            ['email', 'phone', 'tel', 'fax', 'www', 'http'])):
+                                details['full_address'] = line
+                                logger.info(f"Found address via fallback method: {line}")
+                                address_found = True
+                                break
+                    except Exception as e:
+                        logger.debug(f"Fallback address search failed: {e}")
 
             except Exception as e:
                 logger.warning(f"Could not extract address: {e}")
 
-            # Extract price/tarif
+            # Extract other details (date, time, price, description, etc.)
             try:
-                tarif_elements = self.driver.find_elements(By.XPATH,
-                                                           "//*[contains(text(), 'Tarif') or contains(text(), 'tarif') or contains(text(), 'Gratuit') or contains(text(), 'gratuit')]")
+                # Date and time extraction
+                date_selectors = [
+                    '.date',
+                    '.event-date',
+                    '[class*="date"]',
+                    '.horaires',
+                    '.ouverture'
+                ]
 
-                for tarif_elem in tarif_elements:
-                    parent = tarif_elem.find_element(By.XPATH, "..")
-                    tarif_text = parent.text.strip()
+                for selector in date_selectors:
+                    try:
+                        date_elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                        for elem in date_elements:
+                            text = elem.text.strip()
+                            # Look for date patterns DD/MM/YYYY or DD-MM-YYYY
+                            date_match = re.search(r'(\d{1,2}[/\-]\d{1,2}[/\-]\d{4})', text)
+                            if date_match:
+                                details['date'] = date_match.group(1).replace('-', '/')
 
-                    if 'gratuit' in tarif_text.lower():
-                        details['price'] = 'Gratuit'
-                        logger.info("Found price: Gratuit")
-                        break
-                    else:
-                        price_match = re.search(r'(\d+(?:[.,]\d+)?)\s*€', tarif_text)
-                        if price_match:
-                            details['price'] = f"{price_match.group(1)}€"
-                            logger.info(f"Found price: {details['price']}")
+                            # Look for time patterns HH:MM
+                            time_match = re.search(r'(\d{1,2}[h:]\d{2})', text)
+                            if time_match:
+                                details['time'] = time_match.group(1).replace('h', ':')
+
+                            if details.get('date') or details.get('time'):
+                                break
+                        if details.get('date') or details.get('time'):
                             break
-
-                if not details.get('price'):
-                    gratuit_elem = self.driver.find_elements(By.XPATH, "//*[contains(text(), 'Gratuit')]")
-                    if gratuit_elem:
-                        details['price'] = 'Gratuit'
-                        logger.info("Found price: Gratuit (broad search)")
-
+                    except:
+                        continue
             except Exception as e:
-                logger.warning(f"Could not extract price: {e}")
+                logger.debug(f"Date/time extraction failed: {e}")
 
-            # Extract description
             try:
+                # Price extraction
+                price_selectors = [
+                    '.prix',
+                    '.price',
+                    '.tarif',
+                    '[class*="prix"]',
+                    '[class*="tarif"]'
+                ]
+
+                for selector in price_selectors:
+                    try:
+                        price_elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                        for elem in price_elements:
+                            text = elem.text.strip()
+                            if any(word in text.lower() for word in ['gratuit', 'free', '€', 'euro']):
+                                details['price'] = text
+                                break
+                        if details.get('price'):
+                            break
+                    except:
+                        continue
+            except Exception as e:
+                logger.debug(f"Price extraction failed: {e}")
+
+            try:
+                # Description extraction
                 desc_selectors = [
-                    '.descriptif',
                     '.description',
-                    '[class*="descriptif"]',
-                    '[class*="description"]',
+                    '.descriptif',
+                    '.event-description',
                     '.content p',
-                    '.texte',
-                    'p'
+                    '[class*="description"]'
                 ]
 
                 for selector in desc_selectors:
                     try:
                         desc_elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                        descriptions = []
-
                         for elem in desc_elements:
                             text = elem.text.strip()
-                            if (len(text) > 30 and
-                                    'tarif' not in text.lower() and
-                                    'horaire' not in text.lower() and
-                                    'contact' not in text.lower()):
-                                descriptions.append(text)
-
-                        if descriptions:
-                            details['description'] = '\n\n'.join(descriptions[:2])
-                            logger.info(f"Found description: {details['description'][:100]}...")
+                            if len(text) > 50:  # Only take substantial descriptions
+                                details['description'] = text[:500]  # Limit length
+                                break
+                        if details.get('description'):
                             break
-
                     except:
                         continue
-
             except Exception as e:
-                logger.warning(f"Could not extract description: {e}")
+                logger.debug(f"Description extraction failed: {e}")
 
-            # Extract time/date info
-            try:
-                # Look for time patterns
-                time_elements = self.driver.find_elements(By.XPATH,
-                                                          "//*[contains(text(), 'h') or contains(text(), ':')]")
-                for elem in time_elements:
-                    text = elem.text.strip()
-                    time_match = re.search(r'(\d{1,2}[h:]\d{2})', text)
-                    if time_match:
-                        details['time'] = time_match.group(1).replace('h', ':')
-                        logger.info(f"Found time: {details['time']}")
-                        break
-
-                # Look for date patterns
-                date_elements = self.driver.find_elements(By.XPATH,
-                                                          "//*[contains(text(), '/202') or contains(text(), '202')]")
-                for elem in date_elements:
-                    text = elem.text.strip()
-                    date_match = re.search(r'(\d{1,2}/\d{1,2}/202\d)', text)
-                    if date_match:
-                        details['date'] = date_match.group(1)
-                        logger.info(f"Found date: {details['date']}")
-                        break
-
-            except Exception as e:
-                logger.warning(f"Could not extract time/date: {e}")
-
-            # Extract contact/organizer info
-            try:
-                contact_elements = self.driver.find_elements(By.XPATH,
-                                                             "//*[contains(text(), 'Tel') or contains(text(), 'tél') or contains(text(), '@')]")
-                for elem in contact_elements:
-                    parent = elem.find_element(By.XPATH, "..")
-                    contact_text = parent.text.strip()
-                    if '@' in contact_text or 'tel' in contact_text.lower():
-                        details['organizer'] = contact_text
-                        logger.info(f"Found organizer: {contact_text}")
-                        break
-            except Exception as e:
-                logger.warning(f"Could not extract organizer: {e}")
-
+            logger.info(f"Extracted details: {details}")
             return details
 
         except Exception as e:
@@ -491,6 +687,12 @@ class LeHavreEventsScraper:
                         complete_new_events.append(event)
                         logger.info(f"✓ Successfully processed: {event.get('title', 'Unknown')}")
 
+                        # Log the extracted address for verification
+                        if event.get('full_address'):
+                            logger.info(f"  Address: {event.get('full_address')}")
+                        else:
+                            logger.warning(f"  No address found for: {event.get('title', 'Unknown')}")
+
                         # Rate limiting between requests
                         time.sleep(2)
 
@@ -522,6 +724,11 @@ class LeHavreEventsScraper:
             logger.info(f"\n=== SCRAPING COMPLETE ===")
             logger.info(f"Total events: {len(all_events)}")
             logger.info(f"New events added: {len(complete_new_events)}")
+
+            # Log address extraction success rate
+            events_with_address = len([e for e in complete_new_events if e.get('full_address')])
+            logger.info(f"Address extraction success: {events_with_address}/{len(complete_new_events)} events")
+
             return all_events
 
         finally:
@@ -535,7 +742,7 @@ class LeHavreEventsScraper:
                 'metadata': {
                     'last_updated': datetime.now().isoformat(),
                     'total_events': len(events),
-                    'scraper_version': '2.0'
+                    'scraper_version': '2.1'
                 },
                 'events': events
             }
@@ -559,13 +766,13 @@ class LeHavreEventsScraper:
 
 def main():
     """Main function for automated execution"""
-    print("=== LE HAVRE EVENTS SCRAPER (AUTOMATED) ===\n")
+    print("=== LE HAVRE EVENTS SCRAPER (IMPROVED ADDRESS EXTRACTION) ===\n")
 
     # Use headless mode for automation
     scraper = LeHavreEventsScraper(headless=True, timeout=20)
 
     try:
-        events = scraper.scrape_events(max_events=40)
+        events = scraper.scrape_events(max_events=1)  # Increased to test more events
 
         if events:
             # Save events
@@ -576,13 +783,24 @@ def main():
             print(f"Total events: {len(events)}")
             print(f"Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-            # Print recent events for verification
-            print(f"\n=== RECENT EVENTS (First 5) ===")
-            for i, event in enumerate(events[:5], 1):
+            # Print recent events for verification with addresses
+            print(f"\n=== RECENT EVENTS WITH ADDRESSES ===")
+            events_with_addresses = [e for e in events[:10] if e.get('full_address')]
+
+            for i, event in enumerate(events_with_addresses[:5], 1):
                 print(f"{i}. {event.get('title', 'N/A')}")
                 print(f"   Date: {event.get('date', 'N/A')}")
-                print(f"   Location: {event.get('full_address', 'N/A')[:50]}...")
+                print(f"   Address: {event.get('full_address', 'N/A')}")
+                print(f"   Price: {event.get('price', 'N/A')}")
                 print()
+
+            # Show address extraction statistics
+            total_events = len([e for e in events if e.get('scraped_at')])  # Recently scraped events
+            events_with_addr = len([e for e in events if e.get('full_address') and e.get('scraped_at')])
+
+            if total_events > 0:
+                success_rate = (events_with_addr / total_events) * 100
+                print(f"Address extraction success rate: {success_rate:.1f}% ({events_with_addr}/{total_events})")
 
             return True
         else:
