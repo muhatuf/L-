@@ -772,7 +772,7 @@ def main():
     scraper = LeHavreEventsScraper(headless=True, timeout=20)
 
     try:
-        events = scraper.scrape_events(max_events=1)  # Increased to test more events
+        events = scraper.scrape_events(max_events=40)  # Increased to test more events
 
         if events:
             # Save events
