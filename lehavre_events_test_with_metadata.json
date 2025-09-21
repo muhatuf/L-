@@ -1,55 +1,10 @@
 {
   "metadata": {
-    "last_updated": "2025-09-14T09:38:52.959274",
-    "total_events": 65,
+    "last_updated": "2025-09-21T09:41:28.443067",
+    "total_events": 66,
     "scraper_version": "2.1"
   },
   "events": [
-    {
-      "id": "TFOFMANOR076V521BHJ",
-      "title": "Concert : Preoccupations",
-      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-preoccupations_TFOFMANOR076V521BHJ/",
-      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Preoccupations----Le-Tetris.jpg?width=550",
-      "date": "16/09/2025",
-      "time": "20:00",
-      "full_address": "",
-      "price": "16,00€",
-      "description": "> Preoccupations – [Post-Punk]\nPreoccupations est un groupe de post-punk originaire de Calgary formé en 2012 sous le nom de Viet Cong. Leur cinquième album « Ill at Ease » sort sur le label Born Losers. Cet album de huit titres puise son inspiration dans la nostalgie des années 80 et 90 tout en conservant le son post-punk emblématique du groupe.\n\nÀ propos des thèmes de l’album, le frontman Matt Flegel confie : « La source de sujets sombres à aborder ne semble pas tarie, et c’est toujours là que je puise mes paroles. Résumer toutes mes angoisses dans une chanson est souvent le seul moyen de traverser une journée. Certaines chansons naissent dans un monde de plaines arides de terre brûlée, recouvertes d’une poussière de honte, d’effroi, de mort, où tout ce que j’aime me tue. »",
-      "ticket_url": "",
-      "organizer": "Tel. 02 35 19 00 38",
-      "audience": "",
-      "scraped_at": "2025-08-04T19:44:15.600411"
-    },
-    {
-      "id": "TFOFMANOR076V522HF4",
-      "title": "Concert : Garce Club Party",
-      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-garce-club-party_TFOFMANOR076V522HF4/",
-      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Garce-Club-Party----Le-Tetris.jpg?width=550",
-      "date": "18/09/2025",
-      "time": "19:30",
-      "full_address": "",
-      "price": "14,00€",
-      "description": "Dans le cadre des Journées du Matrimoine, le Garce Club vous propose trois concert. Avant les concerts, rendez-vous à 19h30 pour rencontrer et échanger avec les membres de cette toute nouvelle association havraise !\n\n> L.A. Witch – [Garage Rock – USA]\nLes trois grrrls de L.A. WITCH viennent tout droit de Los Angeles. Ou plutôt d’un vieux motel hanté aux abords d’Hollywood.\nDans la lignée de The Brian Jonestown Massacre, My Bloody Valentine, Spacemen 3, ou de manière plus générale du garage 60’s, elles produisent des morceaux oscillants entre psyché noir 70’s, grunge 90’s et surf rock ensanglanté. Pour beaucoup, leur son lo-fi et saturé n’est pas sans rappeler les Black Angels ou les Black Rebel Motorcycle Club.",
-      "ticket_url": "",
-      "organizer": "Tel. 02 35 19 00 38",
-      "audience": "",
-      "scraped_at": "2025-08-04T19:44:15.656485"
-    },
-    {
-      "id": "TFOFMANOR076V522PWD",
-      "title": "Béton Le Havre 2025",
-      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/beton-le-havre-2025_TFOFMANOR076V522PWD/",
-      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2517.jpg?width=550",
-      "date": "19/09/2025",
-      "time": "",
-      "full_address": "",
-      "price": "Gratuit",
-      "description": "Béton est de retour les 19, 20 et 21 septembre 2025 pour trois jours d’explorations artistiques, musicales et urbaines.\n\nMusique + Architecture :\nPour cette 7ᵉ édition, le festival transformera la ville en un immense terrain de jeu pour vous proposer une déambulation hors du commun à travers plusieurs lieux emblématiques. Une nouvelle étape dans le projet, qui pousse encore plus loin le dialogue entre le patrimoine havrais et la scène artistique locale, à travers des expériences musicales uniques.",
-      "ticket_url": "",
-      "organizer": "contact@beton-lehavre.com",
-      "audience": "",
-      "scraped_at": "2025-08-04T19:44:15.711995"
-    },
     {
       "id": "TFOFMANOR076V521BIE",
       "title": "Concert : Secousses #4",
@@ -979,6 +934,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2025-09-14T06:24:09.864831"
+    },
+    {
+      "id": "TFOFMANOR076V522PWD",
+      "title": "Béton Le Havre 2025",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/beton-le-havre-2025_TFOFMANOR076V522PWD/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2517.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Béton Le Havre 2025\nDivers lieux – 28 Rue du Général Faidherbe – 76600 LE HAVRE",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-09-21T06:27:55.056277"
+    },
+    {
+      "id": "TFOFMANOR076V523QYR",
+      "title": "Pôle Party du CEM",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/pole-party-du-cem_TFOFMANOR076V523QYR/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Pole-Party-Le-CEM----Le-CEM--3-.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Pôle Party du CEM\nLe CEM – Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-09-21T06:27:55.358752"
+    },
+    {
+      "id": "TFOFMANOR076V523G72",
+      "title": "Concert-lecture : Mathias Malzieu -L'homme qui écoutait battre le coeur des chats",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-lecture-mathias-malzieu-l-homme-qui-ecoutait-battre-le-coeur-des-chats_TFOFMANOR076V523G72/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2665.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert-lecture : Mathias Malzieu -L’homme qui écoutait battre le coeur des chats\nSalle Michel Vallery – 1 Rue Oscar Commettant – 76290 MONTIVILLIERS",
+      "price": "Tarifs\nTarif de base : 18,00€\nTarif réduit : 12,00€\n(personne sans emploi, étudiant, groupe à partir de 12 personnes)\nTarif enfant : 5,00€\n(moins de 18 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-09-21T06:27:57.213397"
+    },
+    {
+      "id": "TFOFMANOR076V523GDO",
+      "title": "Concert : Lanvin - Father & Son",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-lanvin-father--son_TFOFMANOR076V523GDO/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-337.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 28,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-09-21T06:27:57.269995"
     }
   ]
 }
