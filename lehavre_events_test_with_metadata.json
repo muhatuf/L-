@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2025-10-12T09:38:05.846355",
-    "total_events": 95,
+    "last_updated": "2025-10-19T09:37:22.738485",
+    "total_events": 99,
     "scraper_version": "2.1"
   },
   "events": [
@@ -1429,6 +1429,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2025-10-12T06:24:29.670822"
+    },
+    {
+      "id": "TFOFMANOR076V523ZSL",
+      "title": "Ad Hoc Festival : Concert-paysage - Oka",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/turretot/ad-hoc-festival-concert-paysage-oka_TFOFMANOR076V523ZSL/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2940.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Ad Hoc Festival : Concert-paysage – Oka\nSalle des fêtes – 7 Place des Loisirs – 76280 TURRETOT",
+      "price": "Tarifs\nTarif de base : 5,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-19T06:24:47.240067"
+    },
+    {
+      "id": "TFOFMANOR076V523ZV5",
+      "title": "Ad Hoc Festival : Musique - Ekla !",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/la-cerlangue/ad-hoc-festival-musique-ekla_TFOFMANOR076V523ZV5/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2946.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Ad Hoc Festival : Musique – Ekla !\nLa Cerlangue – 350 Rue du Four À Chaux – 76430 LA CERLANGUE",
+      "price": "Tarifs\nTarif de base : 5,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-19T06:24:47.356050"
+    },
+    {
+      "id": "TFOFMANOR076V521WRA",
+      "title": "Concert : The Amy Winehouse Band",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-the-amy-winehouse-band_TFOFMANOR076V521WRA/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2357.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : The Amy Winehouse Band\nThéâtre Le Normandy – 387 Rue Aristide Briand – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 32,00€\n(Catégorie 1)\nTarif de base : 29,00€\n(Catégoire 1 – étudiant et moins de 18 ans)\nTarif de base : 27,00€\n(Catégorie 2)\nTarif réduit : 24,00€\n(Catégorie 2 – étudiant et moins de 18 ans)\nTarif réduit : 27,00€\n(PMR)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-19T06:24:47.413370"
+    },
+    {
+      "id": "TFOFMANOR076V520DQ6",
+      "title": "Concert : Médine",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-medine_TFOFMANOR076V520DQ6/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-261.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Médine\nThéâtre Le Normandy – 387 Rue Aristide Briand – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 32,00€\n(Parterre)\nTarif de base : 35,00€\n(Balcon)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-19T06:24:47.527778"
     }
   ]
 }
