@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2025-10-19T09:37:22.738485",
-    "total_events": 99,
+    "last_updated": "2025-10-26T09:38:59.537090",
+    "total_events": 106,
     "scraper_version": "2.1"
   },
   "events": [
@@ -1489,6 +1489,111 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2025-10-19T06:24:47.527778"
+    },
+    {
+      "id": "TFOFMANOR076V52420G",
+      "title": "Concert : \"L'Héritage de Bretagne\"",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-l-heritage-de-bretagne_TFOFMANOR076V52420G/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-1444.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : « L’Héritage de Bretagne »\nÉglise Saint-Vincent-de-Paul – 14 Place Saint-Vincent-de-Paul – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 10,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:14.823807"
+    },
+    {
+      "id": "TFOFMANOR076V5241WH",
+      "title": "Concert : Avishai Cohen Quintet",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-avishai-cohen-quintet_TFOFMANOR076V5241WH/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2988.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 42,00€\nTarif réduit : 37,00€\n(étudiants – Demandeurs d’emploi)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:15.606355"
+    },
+    {
+      "id": "TFOFMANOR076V5242ID",
+      "title": "Soirée live musique : Duo Le Bout du Quai",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/soiree-live-musique-duo-le-bout-du-quai_TFOFMANOR076V5242ID/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3001.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:16.102021"
+    },
+    {
+      "id": "TFOFMANOR076V5243AX",
+      "title": "Concert : Jazz en entrée - Django's Smile",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/concert-jazz-en-entree-django-s-smile_TFOFMANOR076V5243AX/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-1943.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Jazz en entrée – Django’s Smile\nEspace Culturel Sarah Bernhardt – 43 Rue d’Ignauval – 76310 SAINTE-ADRESSE",
+      "price": "Tarifs\nTarif de base : 9,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:16.166552"
+    },
+    {
+      "id": "TFOFMANOR076V5242IK",
+      "title": "Concert : Dj Set - Dj Cali",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-dj-set-dj-cali_TFOFMANOR076V5242IK/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3002.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:16.358815"
+    },
+    {
+      "id": "TFOFMANOR076V5242PC",
+      "title": "Concert : Therendes - Métal",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-therendes-metal_TFOFMANOR076V5242PC/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3019.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 5,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:16.485850"
+    },
+    {
+      "id": "TFOFMANOR076V5242IQ",
+      "title": "Concert : Dj Set - Dj Azka",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-dj-set-dj-azka_TFOFMANOR076V5242IQ/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3003.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-10-26T06:26:16.867668"
     }
   ]
 }
