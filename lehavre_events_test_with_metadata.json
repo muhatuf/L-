@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2025-10-26T09:38:59.537090",
-    "total_events": 106,
+    "last_updated": "2025-11-02T09:38:43.668682",
+    "total_events": 107,
     "scraper_version": "2.1"
   },
   "events": [
@@ -1594,6 +1594,21 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2025-10-26T06:26:16.867668"
+    },
+    {
+      "id": "TFOFMANOR076V5245K5",
+      "title": "Marché de Noël à Harfleur - \"Forêt enchantée\"",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/marche-de-noel-a-harfleur-foret-enchantee_TFOFMANOR076V5245K5/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Marche-54.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-02T06:26:50.779951"
     }
   ]
 }
