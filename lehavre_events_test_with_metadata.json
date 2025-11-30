@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2025-11-23T09:38:02.386336",
-    "total_events": 139,
+    "last_updated": "2025-11-30T09:39:56.703945",
+    "total_events": 145,
     "scraper_version": "2.1"
   },
   "events": [
@@ -2089,6 +2089,96 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2025-11-23T06:25:35.702351"
+    },
+    {
+      "id": "TFOFMANOR076V524BXN",
+      "title": "Concert : Maruja + Zonbi",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-maruja--zonbi_TFOFMANOR076V524BXN/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3151.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Maruja + Zonbi\nLe Tetris – Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 12,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:44.700845"
+    },
+    {
+      "id": "TFOFMANOR076V524BXP",
+      "title": "Concert : Bekar",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-bekar_TFOFMANOR076V524BXP/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3152.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Bekar\nLe Tetris – Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 12,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:44.982891"
+    },
+    {
+      "id": "TFOFMANOR076V524C92",
+      "title": "Concert de Noël aux chandelles",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/concert-de-noel-aux-chandelles_TFOFMANOR076V524C92/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3169.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert de Noël aux chandelles\nEglise Saint-Denis – Place Masquelier, 76310 Sainte-Adresse – 76310 SAINTE-ADRESSE",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:45.511819"
+    },
+    {
+      "id": "TFOFMANOR076V524C2N",
+      "title": "Concert : Entre vous et moi",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-entre-vous-et-moi_TFOFMANOR076V524C2N/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3155.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Entre vous et moi\nLe Yard – 37 Rue Alphonse Karr – 76790 ETRETAT",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:45.739206"
+    },
+    {
+      "id": "TFOFMANOR076V522KN9",
+      "title": "Concert : Clair de lune",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-clair-de-lune_TFOFMANOR076V522KN9/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2482.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 25,00€\nTarif réduit : 20,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:46.133789"
+    },
+    {
+      "id": "TFOFMANOR076V523LSM",
+      "title": "Concert : Le Cabaret des Oubliées",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/gonfreville-l-orcher/concert-le-cabaret-des-oubliees_TFOFMANOR076V523LSM/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2767.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 11,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2025-11-30T06:26:46.190970"
     }
   ]
 }
