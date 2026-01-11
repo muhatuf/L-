@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-01-04T09:42:46.374717",
-    "total_events": 187,
+    "last_updated": "2026-01-11T09:41:54.071836",
+    "total_events": 188,
     "scraper_version": "2.1"
   },
   "events": [
@@ -2809,6 +2809,21 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-01-04T06:28:51.351025"
+    },
+    {
+      "id": "TFOFMANOR076V524DZA",
+      "title": "Festival Estacade 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/festival-estacade-2026_TFOFMANOR076V524DZA/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-Titre-401.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Festival Estacade 2026\nEspace culturel Sarah Bernhardt – 43 Rue d’Ignauval – 76310 SAINTE-ADRESSE",
+      "price": "Tarifs\nTarif de base : 12,00€\nTarif réduit : 5,00€\n(Pour les moins de 18 ans)\nTarif réduit : 45,00€\n(Pass 5 concerts)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-11T06:28:33.014639"
     }
   ]
 }
