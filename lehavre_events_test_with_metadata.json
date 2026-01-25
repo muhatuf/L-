@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-01-18T09:40:41.049392",
-    "total_events": 198,
+    "last_updated": "2026-01-25T09:42:02.041904",
+    "total_events": 203,
     "scraper_version": "2.1"
   },
   "events": [
@@ -2974,6 +2974,81 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-01-18T06:28:14.551793"
+    },
+    {
+      "id": "TFOFMANOR076V524L70",
+      "title": "Festival : Piano Is Not Dead 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/festival-piano-is-not-dead-2026_TFOFMANOR076V524L70/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3386.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-25T06:28:51.732948"
+    },
+    {
+      "id": "TFOFMANOR076V524L5P",
+      "title": "Concert : Les bougresses vengeresses",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-les-bougresses-vengeresses_TFOFMANOR076V524L5P/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3384.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Les bougresses vengeresses\nMaison de l’étudiant – salle de spectacle – 50 Rue Jean-Jacques Rousseau – 76600 LE HAVRE",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-25T06:28:52.436224"
+    },
+    {
+      "id": "TFOFMANOR076V524L8C",
+      "title": "Concert : Paddington, concert en famille",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-paddington-concert-en-famille_TFOFMANOR076V524L8C/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3391.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15,00€\nTarif réduit : 10,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-25T06:28:52.664364"
+    },
+    {
+      "id": "TFOFMANOR076V524LXF",
+      "title": "Concert : Jazz en entrée - Back to London",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/concert-jazz-en-entree-back-to-london_TFOFMANOR076V524LXF/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-414.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Jazz en entrée – Back to London\nEspace Culturel Sarah Bernhardt – 43 Rue d’Ignauval – 76310 SAINTE-ADRESSE",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-25T06:28:52.720196"
+    },
+    {
+      "id": "TFOFMANOR076V524K2F",
+      "title": "Concert : Kompromat + Maxi Glut",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-kompromat--maxi-glut_TFOFMANOR076V524K2F/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3359.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Kompromat + Maxi Glut\nLe Tetris – Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 30,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-01-25T06:28:53.136453"
     }
   ]
 }
