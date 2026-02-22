@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-02-15T10:01:44.290247",
-    "total_events": 234,
+    "last_updated": "2026-02-22T09:58:33.757582",
+    "total_events": 238,
     "scraper_version": "2.1"
   },
   "events": [
@@ -3514,6 +3514,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-02-15T06:49:09.053003"
+    },
+    {
+      "id": "TFOFMANOR076V524RG2",
+      "title": "Concert : Garce Club #2",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-garce-club-2_TFOFMANOR076V524RG2/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3478.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Garce Club #2\nFort de Tourneville – 55 Rue du 329ème – 76620 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 15,00€\nTarif réduit : 12,00€\n(prévente)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-02-22T06:45:20.874767"
+    },
+    {
+      "id": "TFOFMANOR076V524RGE",
+      "title": "La Criée des Poètes",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/la-criee-des-poetes_TFOFMANOR076V524RGE/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3479.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-02-22T06:45:20.932902"
+    },
+    {
+      "id": "TFOFMANOR076V5227IH",
+      "title": "Concert : A Voce Di A Terra",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-a-voce-di-a-terra_TFOFMANOR076V5227IH/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2466.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 30,00€\nTarif réduit : 20,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-02-22T06:45:22.742548"
+    },
+    {
+      "id": "TFOFMANOR076V524F9K",
+      "title": "Concert : Lennon live - L'hommage",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-lennon-live-l-hommage_TFOFMANOR076V524F9K/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3256.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Lennon live – L’hommage\nThéâtre Le Normandy – 387 Rue Aristide Briand – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 37,00€\n(Carré Or)\nTarif de base : 34,00€\n(Catégorie 1)\nTarif de base : 29,00€\n(Catégorie 2)\nTarif de base : 29,00€\n(PMR)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-02-22T06:45:22.798856"
     }
   ]
 }
