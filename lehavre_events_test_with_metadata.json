@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-03-01T09:59:00.402761",
-    "total_events": 255,
+    "last_updated": "2026-03-08T09:56:49.336823",
+    "total_events": 258,
     "scraper_version": "2.1"
   },
   "events": [
@@ -3829,6 +3829,51 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-03-01T06:43:22.535216"
+    },
+    {
+      "id": "TFOFMANOR076V524XNA",
+      "title": "Concert : Helios Club - Lacchesi & 1diskret",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/concert-helios-club-lacchesi--1diskret_TFOFMANOR076V524XNA/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3560.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Helios Club – Lacchesi & 1diskret\nPalais des Régates – 1 Rue Maurice Taconet – 76310 SAINTE-ADRESSE",
+      "price": "Tarifs\nTarif de base : 16,99€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-08T06:41:06.855060"
+    },
+    {
+      "id": "TFOFMANOR076V524W2T",
+      "title": "Concert : Duo Cheers - Saint-Patrick",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-duo-cheers-saint-patrick_TFOFMANOR076V524W2T/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-447.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Duo Cheers – Saint-Patrick\nLe Yard – 37 Rue Alphonse Karr – 76790 ETRETAT",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-08T06:41:07.258646"
+    },
+    {
+      "id": "TFOFMANOR076V524W8V",
+      "title": "Concert ; Yaïa",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-yaia_TFOFMANOR076V524W8V/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3545.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-08T06:41:07.605540"
     }
   ]
 }
