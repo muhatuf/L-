@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-03-22T10:03:34.066618",
-    "total_events": 277,
+    "last_updated": "2026-03-29T10:16:56.050785",
+    "total_events": 281,
     "scraper_version": "2.1"
   },
   "events": [
@@ -4159,6 +4159,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-03-22T06:48:20.560246"
+    },
+    {
+      "id": "TFOFMANOR076V5252XW",
+      "title": "Concert : Trio Unplugged",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-trio-unplugged_TFOFMANOR076V5252XW/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-10.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Trio Unplugged\nLe Yard – 37 Rue Alphonse Karr – 76790 ETRETAT",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-29T07:01:58.045168"
+    },
+    {
+      "id": "TFOFMANOR076V5252Y4",
+      "title": "Concert : Peter Le Chapeau Noir",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-peter-le-chapeau-noir_TFOFMANOR076V5252Y4/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3656.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Peter Le Chapeau Noir\nLe Yard – 37 Rue Alphonse Karr – 76790 ETRETAT",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-29T07:01:58.569835"
+    },
+    {
+      "id": "TFOFMANOR076V5253B4",
+      "title": "Concert : Helios 10 Ans - Acte 1",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-helios-10-ans-acte-1_TFOFMANOR076V5253B4/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3685.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Helios 10 Ans – Acte 1\nThéâtre Le Normandy – 387 Rue Aristide Briand – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 16,99€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-29T07:01:58.627899"
+    },
+    {
+      "id": "TFOFMANOR076V5250Y8",
+      "title": "Concert : Double Vitrage + Tukan",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-double-vitrage--tukan_TFOFMANOR076V5250Y8/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3614.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Double Vitrage + Tukan\nLe Tetris – Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 16,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-03-29T07:01:59.100764"
     }
   ]
 }
