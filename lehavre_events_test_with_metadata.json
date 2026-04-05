@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-03-29T10:16:56.050785",
-    "total_events": 281,
+    "last_updated": "2026-04-05T10:18:07.591084",
+    "total_events": 287,
     "scraper_version": "2.1"
   },
   "events": [
@@ -4219,6 +4219,96 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-03-29T07:01:59.100764"
+    },
+    {
+      "id": "TFOFMANOR076V522KBF",
+      "title": "Concert : Requiem de Verdi - L'Ensemble Vocal Renaissance",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-requiem-de-verdi-l-ensemble-vocal-renaissance_TFOFMANOR076V522KBF/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2485.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Requiem de Verdi – L’Ensemble Vocal Renaissance\nCathédrale Notre-Dame – Rue de l’Abbé Herval – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 20,00€\nTarif réduit : 15,00€",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.234398"
+    },
+    {
+      "id": "TFOFMANOR076V524YEG",
+      "title": "Pierres en Lumières 2026 en l'église Saint-Martin à HARFLEUR",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/pierres-en-lumieres-2026-en-l-eglise-saint-martin-a-harfleur_TFOFMANOR076V524YEG/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/eglise-nuit-2.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Pierres en Lumières 2026 en l’église Saint-Martin à HARFLEUR\n19 Rue des 104 – 76700 HARFLEUR",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.295468"
+    },
+    {
+      "id": "TFOFMANOR076V524Z95",
+      "title": "Pierres en Lumières 2026 en l'église Saint-Germain l'Auxerrois à MANEGLISE",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/maneglise/pierres-en-lumieres-2026-en-l-eglise-saint-germain-l-auxerrois-a-maneglise_TFOFMANOR076V524Z95/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/IMG-4746.JPG?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Pierres en Lumières 2026 en l’église Saint-Germain l’Auxerrois à MANEGLISE\nRue des Anciens Combattants – 76133 MANEGLISE",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.356346"
+    },
+    {
+      "id": "TFOFMANOR076V523EC2",
+      "title": "Concert : Les classiques revistés",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/saint-romain-de-colbosc/concert-les-classiques-revistes_TFOFMANOR076V523EC2/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2650.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Les classiques revistés\nLe SiRoCo – Rue Henri Odièvre – 76430 SAINT-ROMAIN-DE-COLBOSC",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.417236"
+    },
+    {
+      "id": "TFOFMANOR076V523L4Y",
+      "title": "Concert : Mike et Riké - Tout le bonheur du monde... Ou presque",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/concert-mike-et-rike-tout-le-bonheur-du-monde-ou-presque_TFOFMANOR076V523L4Y/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2750.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Concert : Mike et Riké – Tout le bonheur du monde… Ou presque\nLa Forge – 1 Rue Frédéric Chopin – 76700 HARFLEUR",
+      "price": "Tarifs\nTarif de base : 15,00€\nTarif de base : 6,00€\n(- de 18 ans, étudiants, étudiants de – de 25 ans, bénéficiaire du RSA)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.479456"
+    },
+    {
+      "id": "TFOFMANOR076V524MKT",
+      "title": "Pierres en Lumières 2026 en l'église Saint-Jean d'Abbetot à LA CERLANGUE",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/la-cerlangue/pierres-en-lumieres-2026-en-l-eglise-saint-jean-d-abbetot-a-la-cerlangue_TFOFMANOR076V524MKT/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/EGLISE-ILLUMINEE.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Pierres en Lumières 2026 en l’église Saint-Jean d’Abbetot à LA CERLANGUE\n274 Rue de l’Abbaye – 76430 LA CERLANGUE",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-05T07:04:10.545745"
     }
   ]
 }
