@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-04-05T10:18:07.591084",
-    "total_events": 287,
+    "last_updated": "2026-04-12T10:26:52.218746",
+    "total_events": 294,
     "scraper_version": "2.1"
   },
   "events": [
@@ -4309,6 +4309,111 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-04-05T07:04:10.545745"
+    },
+    {
+      "id": "TFOFMANOR076V5256DT",
+      "title": "Pierres en Lumières 2026 au CLOS LUPIN - Maison Maurice LEBLANC à ETRETAT",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/pierres-en-lumieres-2026-au-clos-lupin-maison-maurice-leblanc-a-etretat_TFOFMANOR076V5256DT/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/clos-3.JPG?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Pierres en Lumières 2026 au CLOS LUPIN – Maison Maurice LEBLANC à ETRETAT\n15 Rue Guy de Maupassant – 76790 ETRETAT",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.384417"
+    },
+    {
+      "id": "TFOFMANOR076V524J89",
+      "title": "Concert : The Blues Brothers Tribute by Crossover-Band",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-the-blues-brothers-tribute-by-crossover-band_TFOFMANOR076V524J89/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3324.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 20,00€\nTarif réduit : 10,00€\n(-18 ans, étudiants, demandeurs d’emploi, bénéficiaires de l’AAH)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.556213"
+    },
+    {
+      "id": "TFOFMANOR076V524RVL",
+      "title": "Mess My Mind 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/mess-my-mind-2026_TFOFMANOR076V524RVL/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3484.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Mess My Mind 2026\nLe Tétris – 55 Rue du 329ème Régiment d’Infanterie – 76600 LE HAVRE",
+      "price": "Tarifs\nTarif de base : 18,00€\n(1 journée)\nTarif de base : 30,00€\n(Pass 2 jours)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.614813"
+    },
+    {
+      "id": "TFOFMANOR076V524E5M",
+      "title": "Concert : Salvatore Adamo",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-salvatore-adamo_TFOFMANOR076V524E5M/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3214.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 65,00€\n(Carré or)\nTarif de base : 58,00€\n(Catégorie 1)\nTarif de base : 50,00€\n(Catégorie 2)\nTarif de base : 30,00€\n(Catégorie 3)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.671711"
+    },
+    {
+      "id": "TFOFMANOR076V524RVR",
+      "title": "Festival Apollo 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/sainte-adresse/festival-apollo-2026_TFOFMANOR076V524RVR/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3485.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Festival Apollo 2026\n86 Place Maréchal Joffre – 76310 SAINTE-ADRESSE",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.729346"
+    },
+    {
+      "id": "TFOFMANOR076V522KBS",
+      "title": "Concert : Réunion des orchestres d'harmonie des élèves du Conservatoire",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-reunion-des-orchestres-d-harmonie-des-eleves-du-conservatoire_TFOFMANOR076V522KBS/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-2486.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nGratuit pour tous :",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.786661"
+    },
+    {
+      "id": "TFOFMANOR076V524YQ7",
+      "title": "Nuits Suspendues 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/nuits-suspendues-2026_TFOFMANOR076V524YQ7/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3568.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Nuits Suspendues 2026\nJardins suspendus – 85 Rue Albert Copieux – 76620 LE HAVRE",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-04-12T07:12:21.844600"
     }
   ]
 }
