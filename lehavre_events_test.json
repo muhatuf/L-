@@ -4633,5 +4633,35 @@
     "organizer": "",
     "audience": "",
     "scraped_at": "2026-04-26T07:26:21.667433"
+  },
+  {
+    "id": "TFOFMANOR076V525IB2",
+    "title": "Concert : Greg Zlap",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-greg-zlap_TFOFMANOR076V525IB2/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3808.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nTarif de base : 25,00€\nTarif réduit : 13,00€\n(étudiants, moins de 21 ans, demandeurs d’emploi, bénéficiaires de l’AAH)",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-05-03T07:59:01.408772"
+  },
+  {
+    "id": "TFOFMANOR076V524W3C",
+    "title": "Le Carré des Docks fête ses 10 ans",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/le-carre-des-docks-fete-ses-10-ans_TFOFMANOR076V524W3C/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-448.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nTarif de base : 50,00€\n(Catégirue 2)\nTarif de base : 60,00€\n(Catégorie 1)",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-05-03T07:59:01.943860"
   }
 ]
