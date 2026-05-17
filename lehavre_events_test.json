@@ -4768,5 +4768,50 @@
     "organizer": "",
     "audience": "",
     "scraped_at": "2026-05-10T08:06:54.371096"
+  },
+  {
+    "id": "TFOFMANOR076V525SY3",
+    "title": "Marché nocturne à Octeville-sur-Mer",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/octeville-sur-mer/marche-nocturne-a-octeville-sur-mer_TFOFMANOR076V525SY3/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3830.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Marché nocturne à Octeville-sur-Mer\nRue Félix Faure – 76930 OCTEVILLE-SUR-MER",
+    "price": "",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-05-17T08:18:44.671641"
+  },
+  {
+    "id": "TFOFMANOR076V525T8E",
+    "title": "Concert d'ouverture : Anima (Ex) Musica",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-d-ouverture-anima-ex-musica_TFOFMANOR076V525T8E/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3836.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Concert d’ouverture : Anima (Ex) Musica\nMuséum d’Histoire Naturelle – Place du Vieux Marché – 76600 LE HAVRE",
+    "price": "Tarifs\nGratuit pour tous :",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-05-17T08:18:45.753289"
+  },
+  {
+    "id": "TFOFMANOR076V525SZL",
+    "title": "Fête de la musique au Havre",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/fete-de-la-musique-au-havre_TFOFMANOR076V525SZL/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-866.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nGratuit pour tous :",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-05-17T08:18:46.453387"
   }
 ]
