@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-05T12:06:50.893091",
-    "total_events": 370,
+    "last_updated": "2026-07-12T11:28:08.430741",
+    "total_events": 372,
     "scraper_version": "2.1"
   },
   "events": [
@@ -5554,6 +5554,36 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-07-05T08:50:38.321929"
+    },
+    {
+      "id": "TFOFMANOR076V526X98",
+      "title": "La Guinguette du Donjon",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/la-guinguette-du-donjon_TFOFMANOR076V526X98/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3997.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-07-12T08:11:54.049343"
+    },
+    {
+      "id": "TFOFMANOR076V526VJ9",
+      "title": "Concert : Herefordshire & Worcestershire Tourchestra",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/saint-romain-de-colbosc/concert-herefordshire--worcestershire-tourchestra_TFOFMANOR076V526VJ9/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3978.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nGratuit pour tous",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-07-12T08:11:54.420086"
     }
   ]
 }
