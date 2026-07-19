@@ -5578,5 +5578,35 @@
     "organizer": "",
     "audience": "",
     "scraped_at": "2026-07-12T08:11:54.420086"
+  },
+  {
+    "id": "TFOFMANOR076V5275HL",
+    "title": "Concert : Choeur d'été",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-choeur-d-ete_TFOFMANOR076V5275HL/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-7.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-07-19T08:11:35.291665"
+  },
+  {
+    "id": "TFOFMANOR076V526CN3",
+    "title": "Mardi de l'été : Pulse",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/saint-jouin-bruneval/mardi-de-l-ete-pulse_TFOFMANOR076V526CN3/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3886.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nGratuit pour tous",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-07-19T08:11:36.224789"
   }
 ]
