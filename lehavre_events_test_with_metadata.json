@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-07-26T11:36:13.621774",
-    "total_events": 385,
+    "last_updated": "2026-08-02T11:32:53.662418",
+    "total_events": 391,
     "scraper_version": "2.1"
   },
   "events": [
@@ -5779,6 +5779,96 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-07-26T08:19:27.795605"
+    },
+    {
+      "id": "TFOFMANOR076V527BHM",
+      "title": "Concert : White Party",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-white-party_TFOFMANOR076V527BHM/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4042.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.011877"
+    },
+    {
+      "id": "TFOFMANOR076V527I87",
+      "title": "Festiv'Arts 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/octeville-sur-mer/festiv-arts-2026_TFOFMANOR076V527I87/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4080.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 4 € (par jour)\nGratuit (moins de 12 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.067703"
+    },
+    {
+      "id": "TFOFMANOR076V5279HX",
+      "title": "Concert : La colonie de vacances",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-la-colonie-de-vacances_TFOFMANOR076V5279HX/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4014.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 20 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.124491"
+    },
+    {
+      "id": "TFOFMANOR076V527CQX",
+      "title": "Musique : Quelque chose de Johnny - Phoenix 66",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-quelque-chose-de-johnny-phoenix-66_TFOFMANOR076V527CQX/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4051.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 30 €\nTarif de base : 39 €\nTarif de base : 35 €\nTarif de base : 32 €\nTarif de base : 25 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.178998"
+    },
+    {
+      "id": "TFOFMANOR076V527CTH",
+      "title": "Concert : Sinatra : The Voice Is Back",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-sinatra-the-voice-is-back_TFOFMANOR076V527CTH/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4053.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 25 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.341200"
+    },
+    {
+      "id": "TFOFMANOR076V527CUL",
+      "title": "Concert : Tribute to Ella & Joe Pass",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-tribute-to-ella--joe-pass_TFOFMANOR076V527CUL/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4054.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-02T08:15:56.394683"
     }
   ]
 }
