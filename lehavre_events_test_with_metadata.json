@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-09T10:04:45.157274",
-    "total_events": 400,
+    "last_updated": "2026-08-16T09:47:56.171456",
+    "total_events": 404,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6004,6 +6004,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-08-09T06:48:27.662514"
+    },
+    {
+      "id": "TFOFMANOR076V5278DM",
+      "title": "Théâtre : L’imposture",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/theatre-l-imposture_TFOFMANOR076V5278DM/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Imposture---Mathieu-Dutot-thumbnail.webp?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 18 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-16T06:32:41.316664"
+    },
+    {
+      "id": "TFOFMANOR076V527DBA",
+      "title": "Musique : Kashmir, Tribute to Led Zeppelin",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-kashmir-tribute-to-led-zeppelin_TFOFMANOR076V527DBA/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4067.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €\nTarif de base : 32 €\nTarif de base : 30 €\nTarif de base : 25 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-16T06:32:41.423550"
+    },
+    {
+      "id": "TFOFMANOR076V526NR6",
+      "title": "Ouest Park 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/ouest-park-2026_TFOFMANOR076V526NR6/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-3952.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-16T06:32:41.476751"
+    },
+    {
+      "id": "TFOFMANOR076V5278DP",
+      "title": "Concert : Tchaïkovski - Bruckner",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-tchaikovski-bruckner_TFOFMANOR076V5278DP/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Tchaikovski-bruckner---Benoite-Fanton-thumbnail.webp?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-16T06:32:41.529818"
     }
   ]
 }
