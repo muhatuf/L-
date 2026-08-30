@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-23T09:27:12.218291",
-    "total_events": 416,
+    "last_updated": "2026-08-30T14:27:14.078443",
+    "total_events": 423,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6244,6 +6244,111 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-08-23T06:34:28.581727"
+    },
+    {
+      "id": "TFOFMANOR076V528B7N",
+      "title": "Concert : Bamboo Tambourine en concert",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/etretat/concert-bamboo-tambourine-en-concert_TFOFMANOR076V528B7N/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4188.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:02.494098"
+    },
+    {
+      "id": "TFOFMANOR076V528BZ3",
+      "title": "Concert : Ouverture de saison - Ensemble vocal Effervescence",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-ouverture-de-saison-ensemble-vocal-effervescence_TFOFMANOR076V528BZ3/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4191.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nGratuit pour tous",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:03.178999"
+    },
+    {
+      "id": "TFOFMANOR076V528CJ9",
+      "title": "Concert : Éclats d'Italie",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-eclats-d-italie_TFOFMANOR076V528CJ9/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4199.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €\nTarif enfant : 5 €\nGratuit (Gratuit pour les moins de 6 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:03.629682"
+    },
+    {
+      "id": "TFOFMANOR076V527K5H",
+      "title": "Concert : Hugo Lippi Quartet - Olha Maria",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/gonfreville-l-orcher/concert-hugo-lippi-quartet-olha-maria_TFOFMANOR076V527K5H/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Capture-d-ecran-2026-07-31-143445-thumbnail.png?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 14 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:04.122213"
+    },
+    {
+      "id": "TFOFMANOR076V527DCF",
+      "title": "Musique : Michel Fugain, C'est l'histoire d'une belle histoire",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-michel-fugain-c-est-l-histoire-d-une-belle-histoire_TFOFMANOR076V527DCF/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4068.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €\nTarif de base : 32 €\nTarif de base : 30 €\nTarif de base : 25 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:04.167697"
+    },
+    {
+      "id": "TFOFMANOR076V528CNE",
+      "title": "Concert : Les haricots rouges",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-les-haricots-rouges_TFOFMANOR076V528CNE/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4205.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 18 €\nTarif enfant : 5 €\nGratuit (Gratuit pour les moins de 6 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:04.212652"
+    },
+    {
+      "id": "TFOFMANOR076V5280L3",
+      "title": "Concert : Murmuration",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/concert-murmuration_TFOFMANOR076V5280L3/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4128.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 5 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-08-30T11:07:04.257993"
     }
   ]
 }
