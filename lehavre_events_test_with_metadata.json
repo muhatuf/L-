@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-08-30T14:27:14.078443",
-    "total_events": 423,
+    "last_updated": "2026-09-06T13:30:45.593157",
+    "total_events": 425,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6349,6 +6349,36 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-08-30T11:07:04.257993"
+    },
+    {
+      "id": "TFOFMANOR076V528FGY",
+      "title": "Porte ouverte et concert aux gîtes d'Omaoma",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/saint-jouin-bruneval/porte-ouverte-et-concert-aux-gites-d-omaoma_TFOFMANOR076V528FGY/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4235.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-06T10:10:01.281579"
+    },
+    {
+      "id": "TFOFMANOR076V5278XB",
+      "title": "Musique : Nik West",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-nik-west_TFOFMANOR076V5278XB/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/nik-west.jpg-thumbnail.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €\nTarif enfant : 6 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-06T10:10:02.285676"
     }
   ]
 }
