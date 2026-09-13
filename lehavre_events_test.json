@@ -6373,5 +6373,35 @@
     "organizer": "",
     "audience": "",
     "scraped_at": "2026-09-06T10:10:02.285676"
+  },
+  {
+    "id": "TFOFMANOR076V527986",
+    "title": "Théâtre : Cabaret Téhéran",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/theatre-cabaret-teheran_TFOFMANOR076V527986/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/cabaret-teheran-0.png-thumbnail.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nTarif de base : 25 €\nTarif enfant : 6 €",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-09-13T11:00:24.196210"
+  },
+  {
+    "id": "TFOFMANOR076V527DD6",
+    "title": "Musique : Le Show Claude François",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-le-show-claude-francois_TFOFMANOR076V527DD6/",
+    "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4070.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nTarif de base : 35 €\nTarif de base : 32 €\nTarif de base : 30 €\nTarif de base : 25 €",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-09-13T11:00:24.248495"
   }
 ]
