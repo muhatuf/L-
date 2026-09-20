@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-09-13T14:14:40.557338",
-    "total_events": 427,
+    "last_updated": "2026-09-20T13:43:43.177715",
+    "total_events": 431,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6409,6 +6409,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-09-13T11:00:24.248495"
+    },
+    {
+      "id": "TFOFMANOR076V527K66",
+      "title": "Concert : Gerry - O Lake",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/gonfreville-l-orcher/concert-gerry-o-lake_TFOFMANOR076V527K66/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Capture-d-ecran-2026-07-31-145155-thumbnail.png?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 11 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-20T10:30:50.310520"
+    },
+    {
+      "id": "TFOFMANOR076V528403",
+      "title": "Concert : Mountain Men",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-mountain-men_TFOFMANOR076V528403/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Sans-titre-1-4153.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 20 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-20T10:30:50.367897"
+    },
+    {
+      "id": "TFOFMANOR076V527K91",
+      "title": "Concert : Nimbus",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/gonfreville-l-orcher/concert-nimbus_TFOFMANOR076V527K91/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/Capture-d-ecran-2026-07-31-152911-thumbnail.png?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 6 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-20T10:30:50.424673"
+    },
+    {
+      "id": "TFOFMANOR076V527936",
+      "title": "Musique : Purcell, Songs and dances",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-purcell-songs-and-dances_TFOFMANOR076V527936/",
+      "image_url": "https://cdt76.media.tourinsoft.eu/upload/purcell-songs-and-dances.jpg-thumbnail--1-.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 35 €\nTarif enfant : 6 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-20T10:30:50.482071"
     }
   ]
 }
