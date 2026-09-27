@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-09-20T13:43:43.177715",
-    "total_events": 431,
+    "last_updated": "2026-09-27T14:29:58.573149",
+    "total_events": 436,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6469,6 +6469,81 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-09-20T10:30:50.482071"
+    },
+    {
+      "id": "TFOFMANOR076V528XYU",
+      "title": "Festival Pour les Oiseaux 2026",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/festival-pour-les-oiseaux-2026_TFOFMANOR076V528XYU/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4288.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-27T11:16:58.015490"
+    },
+    {
+      "id": "TFOFMANOR076V528WD1",
+      "title": "Concert : Orange Yeti + Astonia",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-orange-yeti--astonia_TFOFMANOR076V528WD1/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4264.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-27T11:16:58.191336"
+    },
+    {
+      "id": "TFOFMANOR076V528WDC",
+      "title": "O'day Swing Festival",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/o-day-swing-festival_TFOFMANOR076V528WDC/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4266.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-27T11:16:58.562064"
+    },
+    {
+      "id": "TFOFMANOR076V5280LB",
+      "title": "Concert : Livrer Pagaille",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/concert-livrer-pagaille_TFOFMANOR076V5280LB/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4129.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-27T11:16:59.932246"
+    },
+    {
+      "id": "TFOFMANOR076V528CQ4",
+      "title": "Concert : Les Wriggles se mettent en quatre",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-les-wriggles-se-mettent-en-quatre_TFOFMANOR076V528CQ4/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4208.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 18 €\nTarif enfant : 5 €\nGratuit (Gratuit pour les moins de 6 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-09-27T11:16:59.991037"
     }
   ]
 }
