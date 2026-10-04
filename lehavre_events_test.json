@@ -6538,5 +6538,35 @@
     "organizer": "",
     "audience": "",
     "scraped_at": "2026-09-27T11:16:59.991037"
+  },
+  {
+    "id": "TFOFMANOR076V52796P",
+    "title": "Musique : Philippe Cassard & Cédric Pescia",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/musique-philippe-cassard--cedric-pescia_TFOFMANOR076V52796P/",
+    "image_url": "https://cdt61.media.tourinsoft.eu/upload/cassard-pescia-6-credit-william-beaucardet.jpeg-thumbnail.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nTarif de base : 35 €\nTarif enfant : 6 €",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-10-04T11:44:58.805965"
+  },
+  {
+    "id": "TFOFMANOR076V5280LY",
+    "title": "Concert : Gospel Feel",
+    "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/concert-gospel-feel_TFOFMANOR076V5280LY/",
+    "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4130.jpg?width=550",
+    "date": "",
+    "time": "",
+    "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+    "price": "Tarifs\nGratuit pour tous",
+    "description": "",
+    "ticket_url": "",
+    "organizer": "",
+    "audience": "",
+    "scraped_at": "2026-10-04T11:44:58.980174"
   }
 ]
