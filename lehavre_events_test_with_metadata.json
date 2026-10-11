@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-10-04T14:57:12.922491",
-    "total_events": 438,
+    "last_updated": "2026-10-11T15:14:09.917729",
+    "total_events": 442,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6574,6 +6574,66 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-10-04T11:44:58.980174"
+    },
+    {
+      "id": "TFOFMANOR076V527GF2",
+      "title": "Concert : Histoires de sorciers",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-histoires-de-sorciers_TFOFMANOR076V527GF2/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/histoires-de-sorciers-c-dr.jpg-thumbnail.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-11T12:02:21.769082"
+    },
+    {
+      "id": "TFOFMANOR076V528G89",
+      "title": "Concert : Rock’ N Cœur",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/saint-romain-de-colbosc/concert-rock-n-coeur_TFOFMANOR076V528G89/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4244.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-11T12:02:21.899769"
+    },
+    {
+      "id": "TFOFMANOR076V527GFC",
+      "title": "Concert : Concert du Nouvel An",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-concert-du-nouvel-an_TFOFMANOR076V527GFC/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/orchestre-c-dr.jpg-thumbnail.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 15 €",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-11T12:02:22.012979"
+    },
+    {
+      "id": "TFOFMANOR076V528CTF",
+      "title": "Concert : Hawaiian Pistoleros",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/montivilliers/concert-hawaiian-pistoleros_TFOFMANOR076V528CTF/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4213.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nTarif de base : 12 €\nTarif enfant : 5 €\nGratuit (Gratuit pour les moins de 6 ans)",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-11T12:02:22.126644"
     }
   ]
 }
