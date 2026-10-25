@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-10-18T13:29:40.507484",
-    "total_events": 447,
+    "last_updated": "2026-10-25T13:49:40.695963",
+    "total_events": 449,
     "scraper_version": "2.1"
   },
   "events": [
@@ -6709,6 +6709,36 @@
       "organizer": "",
       "audience": "",
       "scraped_at": "2026-10-18T10:18:12.130877"
+    },
+    {
+      "id": "TFOFMANOR076V5297U1",
+      "title": "Concert : Helios Club W/ Croustibass",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/le-havre/concert-helios-club-w-croustibass_TFOFMANOR076V5297U1/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4478.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-25T10:37:10.161743"
+    },
+    {
+      "id": "TFOFMANOR076V5298O5",
+      "title": "Noël à Harfleur",
+      "detail_url": "https://www.lehavre-etretat-tourisme.com/fr/fiche/harfleur/noel-a-harfleur_TFOFMANOR076V5298O5/",
+      "image_url": "https://cdt61.media.tourinsoft.eu/upload/Sans-titre-1-4483.jpg?width=550",
+      "date": "",
+      "time": "",
+      "full_address": "Bureau d’information d’Etretat\nPlace Maurice Guillard – 76790 Étretat\nTél. 02 35 27 05 21",
+      "price": "Tarifs\nGratuit pour tous",
+      "description": "",
+      "ticket_url": "",
+      "organizer": "",
+      "audience": "",
+      "scraped_at": "2026-10-25T10:37:11.183472"
     }
   ]
 }
